@@ -11,5 +11,5 @@
 
 ## CONTRUBUTERS
 <a href="https://github.com/OWNER/REPO/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=OWNER/REPO" />
+  <img src="https://contrib.rocks/image?repo=Midway91/HactoberFest2023" />
 </a>
