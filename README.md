@@ -6,3 +6,10 @@
   - You can use any language
   - If there isn't a folder for the language that you are using then make a folder in the HactoberFest folder with the name of the language
   - Have fun 
+
+## I will try to merge all pull requests as soon as possible as long as they are legit.
+
+## CONTRUBUTERS
+<a href="https://github.com/OWNER/REPO/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=OWNER/REPO" />
+</a>
