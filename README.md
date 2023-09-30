@@ -8,8 +8,3 @@
   - Have fun 
 
 ## I will try to merge all pull requests as soon as possible as long as they are legit.
-
-## CONTRUBUTERS
-<a href="https://github.com/OWNER/REPO/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Midway91/HactoberFest2023" />
-</a>
