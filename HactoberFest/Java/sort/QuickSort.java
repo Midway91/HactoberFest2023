@@ -17,6 +17,7 @@ import java.util.Arrays;
  * First round -> [-9,-567,0,23,78,70]   0 = array[(0+5)/2] Left and right swapped
  * Second round -> [-567,-9,0,23,78,70]  -9 = array[(0+1)/2] Recurse to the left
  * Third round -> [-567,-9,0,23,70,78]  70 = array[(3+8)/2] Recurse to the right
+ * @author liuhongjie
  */
 public class QuickSort {
     public static void main(String[] args) {
