@@ -1,5 +1,13 @@
 # Contributing
 
+## Guidelines
+
+- **No deleting files**
+- Your code doesn't have to be pretty
+- You can use any language
+- If there isn't a folder for the language that you are using then make a folder in the HactoberFest folder with the name of the language
+- Have fun!
+
 ## Making Contributions
 
 Be sure to look for similar ideas you may have that already exist within the repository. Avoid making duplicates of issues or Pull Requests when you can. With that in mind, here are 6 simple steps you need to do to contribute.
