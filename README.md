@@ -1,4 +1,4 @@
-# HactoberFest2023
+# HacktoberFest2023
 
 ## Rules:
   - **No deleting files** 
