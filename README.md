@@ -1,5 +1,7 @@
 # HacktoberFest2023
 
+Welcome to the 2023 Hacktoberfest!
+
 ## Rules:
   - **No deleting files** 
   - Your code doesn't have to be pretty
