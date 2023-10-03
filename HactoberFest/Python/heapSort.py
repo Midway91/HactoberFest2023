@@ -1,5 +1,4 @@
-
-# Heap Sort in python
+# Heap Sort in python --
 
 
   def heapify(arr, n, i):
