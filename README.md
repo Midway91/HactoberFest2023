@@ -1,13 +1,29 @@
 # Welcome to the Hacktoberfest 2023 Repository!
 
+<<<<<<< HEAD
 ![Hacktoberfest Logo](./assets/hacktoberfest_wall.png)
 
 ## Introduction
 
 Hacktoberfest is an annual, month-long celebration of open source software. It's organized by DigitalOcean and takes place every October. This event is open to everyone in our global community!
+=======
+Welcome to the Hacktoberfest 2023!
+<br>
+
+![logo](https://github.com/Aryan-Bhargav8/HactoberFest2023/blob/ChangesBranches1/hf10_banner_sponsors_1032x600.png)
+
+## Guidelines:
+
+- **No DELETING files** 
+- Your code doesn't have to be pretty
+- You have the freedom to use any programming language.
+- If there is no folder for the Programming Language YOU are using, please create a folder inside the **"HacktoberFest"** directory with the name of the language.
+- Enjoy the coding process!
+>>>>>>> 5135048039151f009813ac2e843bec5c19579662
 
 Whether you're a developer, student learning to code, event host, or company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge.
 
+<<<<<<< HEAD
 ## What is Hacktoberfest?
 
 Hacktoberfest encourages participation in giving back to the open-source community by completing pull requests, participating in events, and donating to open source projects. In its 10th year, Hacktoberfest continues to grow and foster a vibrant open source community that we are all a part of.
@@ -162,3 +178,9 @@ Now, let's get you started with contributing to other projects. We've compiled a
         Thank You
     </p>
 </h2>
+=======
+## Merge Policy:
+I will merge all pull requests as quickly as possible, as long as they meet the project's requirements and guidelines and are Legit.
+<br>
+Happy coding!
+>>>>>>> 5135048039151f009813ac2e843bec5c19579662

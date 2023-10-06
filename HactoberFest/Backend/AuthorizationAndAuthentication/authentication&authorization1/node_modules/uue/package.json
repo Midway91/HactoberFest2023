@@ -1,0 +1,21 @@
+{
+"name": "uue",
+"main": "uue.js",
+"version": "3.1.2",
+"description": "UUE decoder and encoder for Node.js",
+"keywords": ["uue", "uuencode", "uudecode", "uuencoding", "uudecoding"],
+"author": { "name": "Mithgol the Webmaster" },
+"license": "MIT",
+"repository": {
+   "type": "git",
+   "url": "https://github.com/Mithgol/node-uue.git"
+},
+"dependencies": {
+   "escape-string-regexp": "~1.0.5",
+   "extend": "~3.0.0"
+},
+"scripts": {
+   "pretest": "jshint uue.js test/",
+   "test": "mocha --reporter spec --timeout 60s"
+}
+}

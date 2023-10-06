@@ -1,25 +1,49 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
+int binarysearch(int arr[], int n, int x)
 {
-    int arr[10] = {1 , 5 , 8 , 10 , 11 , 16 , 19 , 22 , 25 , 28 };
-    int l = 0 , h = 9 , key , mid;
-    cout<<"Enter The Key\n";
-    cin>>key;
-    while(l<=h){
-        mid = (l+h)/2;
-        if(key == arr[mid]){
-            cout<<"Found At "<<mid;
-            return 0;
+    int low = 0;
+    int high = n - 1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == x)
+        {
+            return mid;
         }
-        else if(key < arr[mid]){
-            h = mid -1;
-
+        else if (arr[mid] < x)
+        {
+            low = mid + 1;
         }
-        else{
-            l = mid + 1;
+        else
+        {
+            high = mid - 1;
         }
     }
-    cout<<"Not Found";
+    return -1;
+}
+int main()
+{
+    int n;
+    cout << "Enter array size: ";
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int x;
+    cout << "Enter number to be searched in array:";
+    cin >> x;
+    int bin;
+    bin = binarysearch(arr, n, x);
+    if (bin == -1)
+    {
+        cout << "Element not found";
+    }
+    else
+    {
+        cout << "Element is found at position " << bin + 1;
+    }
     return 0;
 }
