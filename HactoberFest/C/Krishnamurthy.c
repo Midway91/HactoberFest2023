@@ -30,7 +30,7 @@ int main() {
     scanf("%d", &num);
 
     if (isKrishnamurthy(num)) {
-        printf("%d is a Krishnamurthy number.\n", num);
+        printf(" %d is a Krishnamurthy number.\n", num);
     } else {
         printf("%d is not a Krishnamurthy number.\n", num);
     }
