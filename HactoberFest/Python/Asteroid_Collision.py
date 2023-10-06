@@ -4,6 +4,7 @@
 
 ## ----- Solution using stack ----- ##
 
+
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         stack = []
@@ -23,6 +24,7 @@ class Solution:
 
 ## ----- Solution without using stack ------ ##
 
+
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         # while there are two or more elements in stack and last 2 elements
@@ -30,23 +32,23 @@ class Solution:
         while end >= 0:
             if asteroids[end] > 0:
                 if end < len(asteroids) - 1:
-                    if asteroids[end+1] < 0:
-                        if abs(asteroids[end+1]) < abs(asteroids[end]):
-                            asteroids.pop(end+1)
+                    if asteroids[end + 1] < 0:
+                        if abs(asteroids[end + 1]) < abs(asteroids[end]):
+                            asteroids.pop(end + 1)
                             end += 1
-                        elif abs(asteroids[end+1]) == abs(asteroids[end]):
-                            asteroids.pop(end+1)
+                        elif abs(asteroids[end + 1]) == abs(asteroids[end]):
+                            asteroids.pop(end + 1)
                             asteroids.pop(end)
                         else:
                             asteroids.pop(end)
             else:
                 if end > 0:
-                    if asteroids[end-1] > 0:
-                        if abs(asteroids[end-1]) < abs(asteroids[end]):
-                            asteroids.pop(end-1)
-                        elif abs(asteroids[end-1]) == abs(asteroids[end]):
+                    if asteroids[end - 1] > 0:
+                        if abs(asteroids[end - 1]) < abs(asteroids[end]):
+                            asteroids.pop(end - 1)
+                        elif abs(asteroids[end - 1]) == abs(asteroids[end]):
                             asteroids.pop(end)
-                            asteroids.pop(end-1)
+                            asteroids.pop(end - 1)
                             end -= 1
                         else:
                             asteroids.pop(end)

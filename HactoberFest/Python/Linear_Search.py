@@ -1,4 +1,4 @@
-values = [2,23,34,39,43,58,67,73,88]
+values = [2, 23, 34, 39, 43, 58, 67, 73, 88]
 to_check_value = 58
 checked_value = False
 for x in range(len(values)):
@@ -8,5 +8,3 @@ for x in range(len(values)):
         break
 if checked_value == False:
     print("Value not found in the list.")
-
-        

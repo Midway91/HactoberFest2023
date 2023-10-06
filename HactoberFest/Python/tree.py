@@ -4,26 +4,30 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 # In-order traversal (Left -> Root -> Right)
 def in_order_traversal(node):
     if node:
         in_order_traversal(node.left)
-        print(node.value, end=' ')
+        print(node.value, end=" ")
         in_order_traversal(node.right)
+
 
 # Pre-order traversal (Root -> Left -> Right)
 def pre_order_traversal(node):
     if node:
-        print(node.value, end=' ')
+        print(node.value, end=" ")
         pre_order_traversal(node.left)
         pre_order_traversal(node.right)
+
 
 # Post-order traversal (Left -> Right -> Root)
 def post_order_traversal(node):
     if node:
         post_order_traversal(node.left)
         post_order_traversal(node.right)
-        print(node.value, end=' ')
+        print(node.value, end=" ")
+
 
 # Create a sample binary tree
 root = TreeNode(1)
