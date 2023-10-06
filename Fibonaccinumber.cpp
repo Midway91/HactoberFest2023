@@ -1,31 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*finding nth fibonacci number using dynamic programming */
-
-long int fibonacci(int n, vector<int> &dp)
-{
-    if (dp[n] == -1)
-    {
-        if (n <= 1)
+long long recursiveFibonacci(int n, vector<long long> &dp) {
+    if (dp[n] == -1) {
+        if (n <= 1) {
             dp[n] = n;
-        else
-            return dp[n] = fibonacci(n - 1,dp) + fibonacci(n - 2,dp);
+        } else {
+            dp[n] = recursiveFibonacci(n - 1, dp) + recursiveFibonacci(n - 2, dp);
+        }
     }
     return dp[n];
 }
 
-/*Iterative procedure for finding nth fibonacci number
-
-long int fibonacci(int n) {
-
-     long int a = 0;
-    long int b = 1;
-    long int sum=1;
-
-    if (n <=1) {
+long long iterativeFibonacci(int n) {
+    if (n <= 1) {
         return n;
     }
+    long long a = 0;
+    long long b = 1;
+    long long sum = 1;
+
     for (int i = 2; i <= n; i++) {
         sum = a + b;
         a = b;
@@ -34,18 +28,20 @@ long int fibonacci(int n) {
 
     return sum;
 }
-*/
 
-int main()
-{
+int main() {
     int n;
     cout << "Enter the value of n: ";
     cin >> n;
-    vector<int> dp(n + 1, -1);
 
-    long int sum = fibonacci(n, dp);
+    vector<long long> dp(n + 1, -1);
 
-    cout << "The " << n << "th Fibonacci number is: " << sum << endl;
+    long long result = recursiveFibonacci(n, dp);
+    cout << "The " << n << "th Fibonacci number (recursive) is: " << result << endl;
+
+    result = iterativeFibonacci(n);
+    cout << "The " << n << "th Fibonacci number (iterative) is: " << result << endl;
 
     return 0;
 }
+
