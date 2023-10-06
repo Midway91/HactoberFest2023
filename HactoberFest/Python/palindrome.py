@@ -1,6 +1,6 @@
 InputString = input("Enter a string or a number: ")
 lengthOfString = len(InputString)
-mid = int(lengthOfString/2)
+mid = int(lengthOfString / 2)
 lengthOfString -= 1
 s = 0
 for i in range(mid):

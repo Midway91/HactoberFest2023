@@ -39,7 +39,9 @@ class Trie:
                 return not node.children
 
             char = word[depth]
-            if char in node.children and _delete_helper(node.children[char], word, depth + 1):
+            if char in node.children and _delete_helper(
+                node.children[char], word, depth + 1
+            ):
                 del node.children[char]
                 return not node.children
 

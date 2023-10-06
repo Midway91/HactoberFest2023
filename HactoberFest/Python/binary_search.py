@@ -1,13 +1,11 @@
 # This function finds an element in a sorted list.
 def binary_search(list, target):
-
     # Initialize two pointers, low and high, to the beginning and end of the list.
     low = 0
     high = len(list) - 1
 
     # While low is less than or equal to high:
     while low <= high:
-
         # Calculate the middle index of the list.
         mid = (low + high) // 2
 

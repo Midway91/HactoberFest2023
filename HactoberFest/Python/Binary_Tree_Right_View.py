@@ -2,6 +2,7 @@
 # Difficulty: Medium
 # Problem: https://leetcode.com/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=leetcode-75
 
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -13,8 +14,9 @@ class Solution:
         self.level = 0
         self.res = []
         self.dfs(root, 1)
-        
+
         return self.res
+
     # Implement depth-first search
     def dfs(self, node: Optional[TreeNode], curr_level: int) -> None:
         if node:
