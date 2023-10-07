@@ -1,119 +1,367 @@
+import tkinter
 from tkinter import *
-import math
+from tkinter import messagebox
 
-root = Tk()
-root.title('CalcX')
+# setting up the tkinter window
+root = tkinter.Tk()
+root.geometry("250x400+300+300")
+root.resizable(0,0)
+root.title("Calculator")
 
-e = Entry(root, width=35, borderwidth=4)
-e.grid(column=0, row=0, columnspan=3)
+val = ""
+A = 0
+operator = ""
 
+# function for numerical button clicked
 
-def ln():
-    s = int(e.get())
-    e.delete(0, END)
-    try:
-        e.insert(0, str(math.log(s)))
-    except Exception as z:
-        e.insert(0, z)
+def btn_1_isclicked():
+    global val
+    val = val + "1"
+    data.set(val)
 
-def fact():
-    x = int(e.get())
-    e.delete(0, END)
-    if x >= 1:
-        val = 1
-        for i in range(x, 1, -1):
-            val *= i
-        e.insert(0, str(val))
+def btn_2_isclicked():
+    global val
+    val = val + "2"
+    data.set(val)
 
-    else:
-        e.insert(0, 'how dumb can you be??!')
+def btn_3_isclicked():
+    global val
+    val = val + "3"
+    data.set(val)
 
-def f_num(n):
-    x = e.get()
-    e.delete(0, END)
-    e.insert(0, str(x) + str(n))
+def btn_4_isclicked():
+    global val
+    val = val + "4"
+    data.set(val)
 
-def f_clear():
-    e.delete(0, END)
+def btn_5_isclicked():
+    global val
+    val = val + "5"
+    data.set(val)
 
-def f_op(s = None):
-    x = e.get()
-    e.delete(0, END)
-    global first_n , sign
-    try:
-        first_n = int(x)
-    except:
-        e.insert(0, 'Syntax Error')
-    sign = s
+def btn_6_isclicked():
+    global val
+    val = val + "6"
+    data.set(val)
 
-def f_equal():
-    a = e.get()
-    e.delete(0, END)
-    if a.isnumeric():
-        if sign == '+':
-                e.insert(0, str(int(a) + first_n))
-        elif sign == 'x':
-                e.insert(0,str(int(a) * first_n))
+def btn_7_isclicked():
+    global val
+    val = val + "7"
+    data.set(val)
 
-        elif sign == '-':
-                e.insert(0, str(first_n - int(a)))
+def btn_8_isclicked():
+    global val
+    val = val + "8"
+    data.set(val)
 
-        elif sign == '/':
-            try:
-                e.insert(0, str(first_n/int(a)))
-            except:
-                e.insert(0, 'Now why would do that..')
-        elif sign == 'e':
-            e.insert(0, str(first_n**int(a)))
+def btn_9_isclicked():
+    global val
+    val = val + "9"
+    data.set(val)
 
-        elif sign == None:
-            e.insert(str(a))
-
-    elif a=='':
-        pass
-
-    else:
-        e.insert(0, 'Syntax Error')
+def btn_0_isclicked():
+    global val
+    val = val + "0"
+    data.set(val)
 
 
-button_1 = Button(root, text='1', command=lambda: f_num(1), padx=40, pady=20)
-button_2 = Button(root, text='2', command=lambda: f_num(2), padx=40, pady=20)
-button_3 = Button(root, text='3', command=lambda: f_num(3), padx=40, pady=20)
-button_4 = Button(root, text='4', command=lambda: f_num(4), padx=40, pady=20)
-button_5 = Button(root, text='5', command=lambda: f_num(5), padx=40, pady=20)
-button_6 = Button(root, text='6', command=lambda: f_num(6), padx=40, pady=20)
-button_7 = Button(root, text='7', command=lambda: f_num(7), padx=40, pady=20)
-button_8 = Button(root, text='8', command=lambda: f_num(8), padx=40, pady=20)
-button_9 = Button(root, text='9', command=lambda: f_num(9), padx=40, pady=20)
-button_0 = Button(root, text='0', command=lambda: f_num(0), padx=40, pady=20)
-button_e = Button(root, text='=', command=lambda: f_equal(), padx=39, pady=20)
-button_a = Button(root, text='+', command=lambda: f_op('+'), padx=39, pady=20)
-button_m = Button(root, text='x', command=lambda: f_op('x'), padx=40, pady=20)
-button_d = Button(root, text='/', command=lambda: f_op('/'), padx=40, pady=20)
-button_s = Button(root, text='-', command=lambda: f_op('-'), padx=40, pady=20)
-button_ln = Button(root, text='ln', command=ln, padx=38, pady=20)
-button_fact = Button(root, text='!', command=fact, padx=41, pady=20)
-button_exp = Button(root, text='^', command=lambda: f_op('e'), padx=39, pady=20)
-button_c = Button(root, text='CLEAR', command=f_clear, padx=125, pady=20)
+# functions for the operator button click
+def btn_plus_clicked():
+    global A
+    global operator,val
+    A = int(val)
+    operator = "+"
+    val = val + "+"
+    data.set(val)
 
-button_1.grid(column=0, row=1)
-button_2.grid(column=1, row=1)
-button_3.grid(column=2, row=1)
-button_4.grid(column=0, row=2)
-button_5.grid(column=1, row=2)
-button_6.grid(column=2, row=2)
-button_7.grid(column=0, row=3)
-button_8.grid(column=1, row=3)
-button_9.grid(column=2, row=3)
-button_0.grid(column=0, row=4)
-button_e.grid(column=1, row=4)
-button_a.grid(column=2, row=4)
-button_m.grid(column=0, row=5)
-button_d.grid(column=1, row=5)
-button_s.grid(column=2, row=5)
-button_ln.grid(column=0, row=6)
-button_fact.grid(column=1, row=6)
-button_exp.grid(column=2, row=6)
-button_c.grid(column=0, row=7, columnspan=3)
+def btn_minus_clicked():
+    global A
+    global operator,val
+    A = int(val)
+    operator = "-"
+    val = val + "-"
+    data.set(val)
+
+def btn_mult_clicked():
+    global A
+    global operator,val
+    A = int(val)
+    operator = "*"
+    val = val + "*"
+    data.set(val)
+
+def btn_div_clicked():
+    global A
+    global operator,val
+    A = int(val)
+    operator = "/"
+    val = val + "/"
+    data.set(val)
+
+def btn_c_pressed():
+    global A,operator,val
+    val = ""
+    A = 0
+    operator = ""
+    data.set(val)
+
+
+# function to find the result
+def result():
+    global A,operator,val
+    val2 = val
+    if operator == "+":
+        x = int((val2.split("+")[1]))
+        C = A + x
+        val = str(C)
+        data.set(val)
+    if operator == "-":
+        x = int((val2.split("-")[1]))
+        C = A - x
+        val = str(C)
+        data.set(val)
+    if operator == "*":
+        x = int((val2.split("*")[1]))
+        C = A * x
+        val = str(C)
+        data.set(val)
+    if operator == "/":
+        x = int((val2.split("/")[1]))
+        if x == 0:
+            messagebox.showerror("Error", "Division By 0 Not Supported")
+            A = ""
+            val = ""
+            data.set(val)
+        else:
+            C = int(A / x)
+            data.set(C)
+
+
+# the label that shows the result
+data = StringVar()
+lbl = Label(
+    root,
+    text = "Label",
+    anchor = SE,
+    font = ("Verdana", 20),
+    textvariable = data,
+    background = "#000000",
+    fg = "#ffffff",
+)
+lbl.pack(expand = True, fill = "both")
+
+# the frames section
+btnrow1 = Frame(root)
+btnrow1.pack(expand = True, fill = "both")
+
+btnrow2 = Frame(root)
+btnrow2.pack(expand = True, fill = "both")
+
+btnrow3 = Frame(root)
+btnrow3.pack(expand = True, fill = "both")
+
+btnrow4 = Frame(root)
+btnrow4.pack(expand = True, fill = "both")
+
+
+# The buttons section
+btn1 = Button(
+    btnrow1,
+    text = "1",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_1_isclicked,
+)
+btn1.pack(side = LEFT, expand = True, fill = "both",)
+
+btn2 = Button(
+    btnrow1,
+    text = "2",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_2_isclicked,
+)
+btn2.pack(side = LEFT, expand = True, fill = "both",)
+
+btn3 = Button(
+    btnrow1,
+    text = "3",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_3_isclicked,
+)
+btn3.pack(side = LEFT, expand = True, fill = "both",)
+
+btnplus = Button(
+    btnrow1,
+    text = "+",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#00e7f7",
+    command = btn_plus_clicked,
+)
+btnplus.pack(side = LEFT, expand = True, fill = "both",)
+
+# buttons for frame 2
+
+btn4 = Button(
+    btnrow2,
+    text = "4",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_4_isclicked,
+)
+btn4.pack(side = LEFT, expand = True, fill = "both",)
+
+btn5 = Button(
+    btnrow2,
+    text = "5",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_5_isclicked,
+)
+btn5.pack(side = LEFT, expand = True, fill = "both",)
+
+btn6 = Button(
+    btnrow2,
+    text = "6",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_6_isclicked,
+)
+btn6.pack(side = LEFT, expand = True, fill = "both",)
+
+btnminus = Button(
+    btnrow2,
+    text = "-",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#00e7f7",
+    command = btn_minus_clicked,
+)
+btnminus.pack(side = LEFT, expand = True, fill = "both",)
+
+# button for frame 3
+
+btn7 = Button(
+    btnrow3,
+    text = "7",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_7_isclicked,
+)
+btn7.pack(side = LEFT, expand = True, fill = "both",)
+
+btn8 = Button(
+    btnrow3,
+    text = "8",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_8_isclicked,
+)
+btn8.pack(side = LEFT, expand = True, fill = "both",)
+
+btn9 = Button(
+    btnrow3,
+    text = "9",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_9_isclicked,
+)
+btn9.pack(side = LEFT, expand = True, fill = "both",)
+
+btnmult = Button(
+    btnrow3,
+    text = "*",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#00e7f7",
+    command = btn_mult_clicked,
+)
+btnmult.pack(side = LEFT, expand = True, fill = "both",)
+
+# button for frame4
+
+
+btnc = Button(
+    btnrow4,
+    text = "C",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#00e7f7",
+    command = btn_c_pressed,
+)
+btnc.pack(side = LEFT, expand = True, fill = "both",)
+
+btn0 = Button(
+    btnrow4,
+    text = "0",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#ffffff",
+    command = btn_0_isclicked,
+)
+btn0.pack(side = LEFT, expand = True, fill = "both",)
+
+btnequal = Button(
+    btnrow4,
+    text = "/",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#000000",
+    fg = "#00e7f7",
+    command = btn_div_clicked,
+)
+btnequal.pack(side = LEFT, expand = True, fill = "both",)
+
+btndiv = Button(
+    btnrow4,
+    text = "=",
+    font = ("Verdana", 22),
+    relief = GROOVE,
+    border = 0,
+    background = "#ff3300",
+    fg = "#000000",
+    command = result,
+)
+btndiv.pack(side = LEFT, expand = True, fill = "both",)
 
 root.mainloop()
