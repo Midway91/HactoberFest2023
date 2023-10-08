@@ -30,7 +30,7 @@ cd HACTOBERFEST2023/
 This branch is where all of your contributions for a particular feature or item will reside.
 
 ```sh
-git checkout -b <branch-name>
+git checkout -b binary-search
 ```
 
 The branch name can be anything, but ideally it should be a one to three word summary of a feature or contribution you plan to make.
