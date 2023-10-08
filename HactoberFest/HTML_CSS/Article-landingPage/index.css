@@ -1,0 +1,226 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------------- clear fix ---------------- */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+/* ------------ Mulai ---------------- */
+body {
+    background-image: url(../img/doodles.png);
+}
+.top-bar {
+    position: fixed;
+    background-color: lightskyblue;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    border-bottom: 3px solid salmon;
+}
+.top-bar .comin ul li {
+    font-size: 20px;
+    color: salmon;
+    text-decoration: none;
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+}
+.comin {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.container {
+    position: relative;
+    margin:auto;
+    margin-top: 100px;
+    width: 900px;
+    background-color: #fcfcfc;
+    border-left: 5px solid lightskyblue;
+    border-right: 5px solid salmon;
+    border-top: 5px solid lightskyblue;
+}
+.instagram {
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/twitter.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+    position: absolute;
+    left: 732px;
+    top: -28px;
+}
+.header {
+    padding: 20px;
+}
+@font-face {
+    font-family: "Alex Brush";
+    src: url("../font/AlexBrush-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Sefia-Regular";
+    src: url("../font/Sofia-Regular.otf");
+}
+.header .judul {
+    font-size: 60px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: rgb(39, 39, 39);
+    font-family: "Alex Brush";
+}
+.header li{
+    display: inline-block;
+}
+.header a {
+    display: inline;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px;
+    color: salmon;
+    font-size: 18px;
+    text-decoration: none;
+}
+.header a:hover {
+    color: white;
+    background-color: lightskyblue;
+
+}
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-color: grey;
+    height: 320px;
+    background-size: cover;
+    background-position: 0 -190px;
+    margin-top: 5px;
+    border-top: 5px solid lightskyblue;
+    border-bottom: 5px solid lightblue;
+}
+.content {
+    width: 900px;
+    box-sizing: border-box;
+}
+.main {
+    font-family: "Sofia-Rebular";
+    padding: 20px;
+    width: 600px;
+    box-sizing: border-box;
+    float: left;
+}
+.main h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+    margin-left: 0;
+}
+.main .penulis {
+    font-size: 13px;
+    margin-top: -8px;
+}
+.main .penulis a {
+    text-decoration: none;
+    color: salmon;
+}
+
+.main .paragraf {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-justify: auto;
+}
+.sidebar {
+    width: 300px;
+    float: right;
+    box-sizing: border-box;
+}
+.sidebar h3 {
+    margin-top: 30px;
+    font-size: 19px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: rgb(54, 54, 54);
+}
+.sidebar img {
+    width: 70px;
+    height: 80px;
+    padding-right: 10px;
+    float: left;
+}
+.footer {
+    background-color: #2c2c2cea;
+    height: 50px;
+    line-height: 50px;
+    border-top: 5px solid salmon;
+    border-bottom: 5px solid salmon;
+}
+.footer p {
+    text-align: center;
+    color: #eaeaea
+}
+.footer a {
+    color: salmon;
+    text-decoration: none;
+}
