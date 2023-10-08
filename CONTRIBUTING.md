@@ -42,13 +42,13 @@ At this point, everything is setup for you to make your changes to the repositor
 This command allows git Git to track your changes.
 
 ```sh
-git add <files you added/changed>
+git add BinarySearch.py
 ```
 
 This command commits (saves) your changes for each file specified in the command. Make sure to add a useful and informative comment to document your changes.
 
 ```sh
-git commit -m "<your commit message>" <files you added/changed>
+git commit -m "BinarySearch" BinarySearch.py
 ```
 
 5. Push to origin
@@ -56,7 +56,7 @@ git commit -m "<your commit message>" <files you added/changed>
 Make your commits visible on Github.
 
 ```sh
-git push origin <your-branch>
+git push origin binary-search
 ```
 
 6. Create a Pull Request
