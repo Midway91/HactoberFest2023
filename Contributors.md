@@ -1,1 +1,2 @@
 John Emmanuel Villegas
+Franklin Eduardo
