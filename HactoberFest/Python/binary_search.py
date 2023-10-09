@@ -1,36 +1,31 @@
-# This function finds an element in a sorted list.
-def binary_search(list, target):
-    # Initialize two pointers, low and high, to the beginning and end of the list.
-    low = 0
-    high = len(list) - 1
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
 
-    # While low is less than or equal to high:
-    while low <= high:
-        # Calculate the middle index of the list.
-        mid = (low + high) // 2
+    while left <= right:
+        mid = left + (right - left) // 2
 
-        # If the element at the middle index is equal to the target element, return the middle index.
-        if list[mid] == target:
+        # Check if the target is present at mid
+        if arr[mid] == target:
             return mid
 
-        # Otherwise, if the element at the middle index is less than the target element, set low to mid + 1.
-        elif list[mid] < target:
-            low = mid + 1
+        # If target is greater, ignore left half
+        elif arr[mid] < target:
+            left = mid + 1
 
-        # Otherwise, set high to mid - 1.
+        # If target is smaller, ignore right half
         else:
-            high = mid - 1
+            right = mid - 1
 
-    # If low is greater than high, the target element is not in the list.
+    # Target was not found in the array
     return -1
 
+# Example usage
+arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+target = 23
 
-# Example usage:
-list = [1, 3, 5, 7, 9]
-target = 5
+result = binary_search(arr, target)
 
-# Find the index of the target element in the list.
-index = binary_search(list, target)
-
-# Print the index of the target element.
-print("The index of the target element is", index)
+if result != -1:
+    print(f"Element {target} found at index {result}.")
+else:
+    print(f"Element {target} not found in the list.")
