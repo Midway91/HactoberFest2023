@@ -1,16 +1,10 @@
-def linear_search(arr, target):
-    for index, item in enumerate(arr):
-        if item == target:
-            return index  # Return the index of the target element if found
-    return -1  # Return -1 if the target element is not in the list
-
-# Example usage
-arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
-target = 9
-
-result = linear_search(arr, target)
-
-if result != -1:
-    print(f"Element {target} found at index {result}.")
-else:
-    print(f"Element {target} not found in the list.")
+values = [2, 23, 34, 39, 43, 58, 67, 73, 88]
+to_check_value = 58
+checked_value = False
+for x in range(len(values)):
+    if values[x] == to_check_value:
+        checked_value = True
+        print("Value found in the list at index ", x)
+        break
+if checked_value == False:
+    print("Value not found in the list.")
