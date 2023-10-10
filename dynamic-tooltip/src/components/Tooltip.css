@@ -1,0 +1,32 @@
+.dynamic-tooltip-container {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .dynamic-tooltip-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .dynamic-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+    top: 100%; /* Updated: Place the tooltip below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    display: none;
+  }
+  
+  .dynamic-tooltip-container:hover .dynamic-tooltip {
+    display: block;
+  }
+  
