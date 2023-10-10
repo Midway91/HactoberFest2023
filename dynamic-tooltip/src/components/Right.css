@@ -1,0 +1,26 @@
+.mobile-screen {
+    width: 375px;
+    height: 667px;
+    background-color: #b6b6b6;
+    border: 20px solid #0a0a0ac3;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-left: 50px;
+    margin-top: 40px;
+    position: relative;
+  }
+  
+  /* .status-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+  } */
+  
+  .app-content {
+    width: 100%;
+    height: calc(100% - 20px);
+    background-color: #b6b6b6;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
