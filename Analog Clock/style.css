@@ -44,7 +44,6 @@ body{
 }
 
 .clock::before{
-    content: '';
     position: absolute;
     width: 8px;
     height: 8px;
@@ -65,4 +64,25 @@ body{
     width: 4px;
     height: var(--h);
     border-radius: 8px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.clock {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.time {
+    font-size: 48px;
+    font-weight: bold;
 }
