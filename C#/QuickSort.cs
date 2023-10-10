@@ -1,67 +1,77 @@
-// C# program for Quick Sort
+// C# implementation of QuickSort
+
 using System;
 
-class QuickSort
+class GFG
 {
-	public static void Sort(int[] arr)
-	{
-		QuickSortRecursive(arr, 0, arr.Length - 1);
-	}
 
-	private static void QuickSortRecursive(int[] arr, int left, int right)
-	{
-		if (left < right)
-		{
-			int pivotIndex = Partition(arr, left, right);
-			QuickSortRecursive(arr, left, pivotIndex - 1);
-			QuickSortRecursive(arr, pivotIndex + 1, right);
-		}
-	}
-
-	private static int Partition(int[] arr, int left, int right)
-	{
-		int pivot = arr[right];
-		int i = left - 1;
-
-		for (int j = left; j < right; j++)
-		{
-			if (arr[j] <= pivot)
-			{
-				i++;
-				Swap(arr, i, j);
-			}
-		}
-
-		Swap(arr, i + 1, right);
-		return i + 1;
-	}
-
-	private static void Swap(int[] arr, int i, int j)
+	// A utility function to swap two elements
+	static void swap(int[] arr, int i, int j)
 	{
 		int temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
 
-	public static void Main(string[] args)
+	// This function takes last element as pivot,
+	// places the pivot element at its correct position
+	// in sorted array, and places all smaller to left
+	// of pivot and all greater elements to right of pivot
+	static int partition(int[] arr, int low, int high)
 	{
-		int[] arr = { 12, 4, 5, 6, 7, 3, 1, 15 };
+		// Choosing the pivot
+		int pivot = arr[high];
 
-		Console.Write("Original Array: ");
-		PrintArray(arr);
+		// Index of smaller element and indicates
+		// the right position of pivot found so far
+		int i = (low - 1);
 
-		Sort(arr);
+		for (int j = low; j <= high - 1; j++)
+		{
 
-		Console.Write("Sorted Array: ");
-		PrintArray(arr);
+			// If current element is smaller than the pivot
+			if (arr[j] < pivot)
+			{
+
+				// Increment index of smaller element
+				i++;
+				swap(arr, i, j);
+			}
+		}
+		swap(arr, i + 1, high);
+		return (i + 1);
 	}
 
-	private static void PrintArray(int[] arr)
+	// The main function that implements QuickSort
+	// arr[] --> Array to be sorted,
+	// low --> Starting index,
+	// high --> Ending index
+	static void quickSort(int[] arr, int low, int high)
 	{
-		foreach (var item in arr)
+		if (low < high)
 		{
-			Console.Write(item + " ");
+
+			// pi is partitioning index, arr[p]
+			// is now at right place
+			int pi = partition(arr, low, high);
+
+			// Separately sort elements before
+			// and after partition index
+			quickSort(arr, low, pi - 1);
+			quickSort(arr, pi + 1, high);
 		}
-		Console.WriteLine();
+	}
+
+	// Driver Code
+	public static void Main()
+	{
+		int[] arr = { 10, 7, 8, 9, 1, 5 };
+		int N = arr.Length;
+
+		// Function call
+		quickSort(arr, 0, N - 1);
+		Console.WriteLine("Sorted array:");
+		for (int i = 0; i < N; i++)
+			Console.Write(arr[i] + " ");
 	}
 }
