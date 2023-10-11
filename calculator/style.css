@@ -18,7 +18,7 @@ body {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 95%;
     font-size: 24px;
     padding: 10px;
     margin-bottom: 10px;
@@ -43,5 +43,17 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #4da3ff;
 }
+
+.ThemeChanger {
+    margin-left: 47px;
+}
+
+.ChangeDarkTheme {
+    margin-top: 17px;
+}
+.ChangeLightTheme {
+    margin-top: 17px;
+}
+
