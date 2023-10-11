@@ -1,0 +1,121 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.signUpPage{
+    display: flex;
+    height: 750px;
+    padding-top: 35px;
+}
+.signUpPageLeft{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+}
+.signUpPageRight{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.loginProfileImage{
+    border-radius: 100px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.signupBack{ 
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupS{
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(to bottom, #0096c7, #5479F7);
+    color: white;
+    padding: 10px;    
+    border-radius: 40px;
+}
+
+.signupS label,.signupS input[type="email"],.signupS input[type="password"]{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.signupS label{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.signupS input{
+    width: 60%;
+    height: 25px;
+}
+
+.signupS input[type="email"],.signupS input[type="password"]{
+    padding-left: 10px;
+}
+
+.signupS input[type="submit"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #03045e;
+    color: white;
+    margin: auto;
+    width: 100px;
+    height: 30px;
+}
+
+.signupS input[type="submit"]:hover{
+    cursor: pointer;
+}
+.submitBtnSignup{
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 145px;
+    margin-top: 20px;
+    padding: 5px;
+    border: none;
+}
+.submitBtnSignup:hover{
+    background-color: #0D1282;
+    color: white;
+    cursor: pointer;
+}
+.errorSignup{
+    color: #0D1282;
+    font-size: 18px;
+    margin-left: 100px;
+    margin-top: 10px;
+
+}
+h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.roleDiv{
+    display: flex;
+    margin-bottom: 17px;
+    margin-left: 77px;
+    width: 60%;
+    height: 80px;
+}
