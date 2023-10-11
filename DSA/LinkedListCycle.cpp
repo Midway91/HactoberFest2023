@@ -1,49 +1,60 @@
 #include <iostream>
 using namespace std;
 
-class LinkedList {
+class LinkedList
+{
 private:
-    class Node {
+    class Node
+    {
     public:
         string data;
-        Node* next;
+        Node *next;
 
         Node(string data) : data(data), next(nullptr) {}
     };
 
-    Node* head;
+    Node *head;
     int size;
 
 public:
     LinkedList() : head(nullptr), size(0) {}
 
-    void printlist() {
-        if (head == nullptr) {
+    void printlist()
+    {
+        if (head == nullptr)
+        {
             cout << "List is Empty" << endl;
             return;
         }
-        Node* currNode = head;
-        while (currNode != nullptr) {
+        Node *currNode = head;
+        while (currNode != nullptr)
+        {
             cout << currNode->data << " -> ";
             currNode = currNode->next;
         }
         cout << "null" << endl;
     }
 
-    void addfirst(string data) {
-        Node* newnode = new Node(data);
+    void addfirst(string data)
+    {
+        Node *newnode = new Node(data);
         newnode->next = head;
         head = newnode;
         size++;
     }
 
-    void addlast(string data) {
-        Node* newnode = new Node(data);
-        if (head == nullptr) {
+    void addlast(string data)
+    {
+        Node *newnode = new Node(data);
+        if (head == nullptr)
+        {
             head = newnode;
-        } else {
-            Node* lastnode = head;
-            while (lastnode->next != nullptr) {
+        }
+        else
+        {
+            Node *lastnode = head;
+            while (lastnode->next != nullptr)
+            {
                 lastnode = lastnode->next;
             }
             lastnode->next = newnode;
@@ -51,29 +62,37 @@ public:
         size++;
     }
 
-    void deletefirst() {
-        if (head == nullptr) {
+    void deletefirst()
+    {
+        if (head == nullptr)
+        {
             cout << "List is already Empty" << endl;
             return;
         }
-        Node* temp = head;
+        Node *temp = head;
         head = head->next;
         delete temp;
         size--;
     }
 
-    void deletelast() {
-        if (head == nullptr) {
+    void deletelast()
+    {
+        if (head == nullptr)
+        {
             cout << "List is Empty" << endl;
             return;
         }
 
-        if (head->next == nullptr) {
+        if (head->next == nullptr)
+        {
             delete head;
             head = nullptr;
-        } else {
-            Node* currNode = head;
-            while (currNode->next->next != nullptr) {
+        }
+        else
+        {
+            Node *currNode = head;
+            while (currNode->next->next != nullptr)
+            {
                 currNode = currNode->next;
             }
             delete currNode->next;
@@ -82,28 +101,39 @@ public:
         size--;
     }
 
-    int getSize() {
+    int getSize()
+    {
         return size;
     }
 
-    bool hasCycle() {
-        if (head == nullptr || head->next == nullptr) {
+    /**
+     * Determines whether the linked list has a cycle.
+     *
+     * @return true if the linked list has a cycle, false otherwise
+     */
+    bool hasCycle()
+    {
+        if (head == nullptr || head->next == nullptr)
+        {
             return false;
         }
 
-        Node* slow = head;
-        Node* fast = head;
+        Node *slow = head;
+        Node *fast = head;
 
-        while (slow != nullptr && fast != nullptr) {
+        while (slow != nullptr && fast != nullptr)
+        {
             fast = fast->next;
 
-            if (fast != nullptr) {
+            if (fast != nullptr)
+            {
                 fast = fast->next;
             }
 
             slow = slow->next;
 
-            if (fast == slow) {
+            if (fast == slow)
+            {
                 return true;
             }
         }
@@ -111,16 +141,19 @@ public:
         return false;
     }
 
-    ~LinkedList() {
-        while (head != nullptr) {
-            Node* temp = head;
+    ~LinkedList()
+    {
+        while (head != nullptr)
+        {
+            Node *temp = head;
             head = head->next;
             delete temp;
         }
     }
 };
 
-int main() {
+int main()
+{
     LinkedList list;
     list.addfirst("Dev");
     list.addfirst("Datir");
@@ -134,9 +167,12 @@ int main() {
     list.printlist();
     cout << "Size: " << list.getSize() << endl;
 
-    if (list.hasCycle()) {
+    if (list.hasCycle())
+    {
         cout << "The linked list has a cycle." << endl;
-    } else {
+    }
+    else
+    {
         cout << "The linked list does not have a cycle." << endl;
     }
 
