@@ -39,7 +39,7 @@ The branch name can be anything, but ideally it should be a one to three word su
 
 At this point, everything is setup for you to make your changes to the repository. The goal is to have fun and learn. Once you are ready to save your changes, add and commit them.
 
-This command allows git Git to track your changes.
+This command allows git to track your changes.
 
 ```sh
 git add BinarySearch.py

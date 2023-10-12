@@ -3,7 +3,6 @@
 #include <vector>
 using namespace std;
 
-// Time : O(r*log(max-min)*log c)
 
 int medianOfMatrix(vector<vector<int>> &mat, int R, int C)
 {
