@@ -1,4 +1,7 @@
 #include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
 
 void bubbleSort(int arr[], int n) {
     bool swapped;
@@ -20,8 +23,21 @@ void bubbleSort(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {2, 1, 3, 8, 5, 7, 9, 4, 6, 10}; //change number
-    int n = sizeof(arr)/sizeof(arr[0]);
+    //int arr[] = {2, 1, 3, 8, 5, 7, 9, 4, 6, 10}; //change number
+    //int n = sizeof(arr)/sizeof(arr[0]);
+
+    vector<int> arr;
+
+    int n;
+    //size of arry;
+    cin>>n;
+
+    //user input arry
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        arr.push_back(x);
+    }
     
     std::cout << "Array before sorting: ";
     for (int i = 0; i < n; i++) {
