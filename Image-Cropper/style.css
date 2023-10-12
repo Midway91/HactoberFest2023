@@ -1,0 +1,26 @@
+/* Ensure the size of the image fit the container perfectly */
+img {
+    display:block;
+    height: 500px;
+    width: 500px;
+
+    }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.imageViewer{
+    display: flex;
+    flex-direction: row;
+}
+#output{
+    margin: 5px;
+}
+
+/* body 
+{
+    background-color: aqua;
+} */
