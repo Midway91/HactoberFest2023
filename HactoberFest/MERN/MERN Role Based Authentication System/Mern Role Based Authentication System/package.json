@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@canvasjs/react-charts": "^1.0.0",
+    "react-scripts": "^5.0.1",
+    "sweetalert2": "^11.7.27"
+  }
+}

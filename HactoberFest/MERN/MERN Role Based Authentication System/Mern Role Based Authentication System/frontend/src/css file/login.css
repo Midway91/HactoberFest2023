@@ -1,0 +1,133 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.loginPage{
+    display: flex;
+    height: 750px;
+    padding-top: 35px;
+}
+.loginProfileImage{
+    border-radius: 100px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.loginPageLeft{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.loginPageRight{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.loginBack{    
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginS{
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(to bottom, #0096c7, #5479F7);
+    color: white;
+    padding: 10px;    
+    border-radius: 40px;
+}
+
+.loginS label,.loginS input[type="email"],.loginS input[type="password"]{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.loginS label{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.loginS input{
+    width: 60%;
+    height: 25px;
+}
+
+.loginS input[type="email"],.loginS input[type="password"]{
+    padding-left: 10px;
+}
+
+.loginS input[type="submit"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #03045e;
+    color: white;
+    margin: auto;
+    width: 100px;
+    height: 30px;
+}
+
+.loginS input[type="submit"]:hover{
+    cursor: pointer;
+}
+.submitBtnLogin{
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 145px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 5px;
+    border: none;
+}
+.submitBtnLogin:hover{
+    background-color: #0D1282;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.errorLogin{
+    color: #0D1282;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.roleDiv{
+    display: flex;
+    margin-bottom: 17px;
+    margin-left: 77px;
+    width: 60%;
+    height: 80px;
+}
+
+.change-password-link a{
+    text-decoration: none;
+    color: white;
+    margin-top: -20px;
+    padding-left: 128px;
+}
+.change-password-link a:hover{
+    color: black;
+}
