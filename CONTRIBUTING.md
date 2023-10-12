@@ -25,6 +25,8 @@ git clone https://<your-username>/HACTOBERFEST2023
 cd HACTOBERFEST2023/
 ```
 
+Tejas Khairnar
+
 3. Create a branch
 
 This branch is where all of your contributions for a particular feature or item will reside.
@@ -39,7 +41,7 @@ The branch name can be anything, but ideally it should be a one to three word su
 
 At this point, everything is setup for you to make your changes to the repository. The goal is to have fun and learn. Once you are ready to save your changes, add and commit them.
 
-This command allows git Git to track your changes.
+This command allows git to track your changes.
 
 ```sh
 git add BinarySearch.py
