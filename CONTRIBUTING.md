@@ -25,6 +25,8 @@ git clone https://<your-username>/HACTOBERFEST2023
 cd HACTOBERFEST2023/
 ```
 
+Tejas Khairnar
+
 3. Create a branch
 
 This branch is where all of your contributions for a particular feature or item will reside.

@@ -15,8 +15,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ASUS/OneDrive/Desktop/HactoberFest2023/HactoberFest/C++",
-      "program": "c:/Users/ASUS/OneDrive/Desktop/HactoberFest2023/HactoberFest/C++/build/Debug/outDebug",
+      "cwd": "c:/Users/mariy/OneDrive/Desktop/github repository/HactoberFest2023",
+      "program": "c:/Users/mariy/OneDrive/Desktop/github repository/HactoberFest2023/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
