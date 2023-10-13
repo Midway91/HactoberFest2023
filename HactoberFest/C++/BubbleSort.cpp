@@ -1,6 +1,7 @@
 // Bubble sort in C++
 
 #include <iostream>
+#include <bits/stc++.h>
 using namespace std;
 
 // perform bubble sort
@@ -35,10 +36,23 @@ void printArray(int array[], int size) {
 }
 
 int main() {
-  int data[] = {-2, 45, 0, 11, -9};
+//  int data[] = {-2, 45, 0, 11, -9};
   
   // find array's length
-  int size = sizeof(data) / sizeof(data[0]);
+  //int size = sizeof(data) / sizeof(data[0]);
+
+  //making dyncamic array with vector
+  int n;
+  cin>>n;
+
+  vector<int> data;
+  for(int i=0;i<n;i++){
+    int x;
+    cin>>x;
+    data.push_back(x);
+  }
+
+  int size =  data.size();
   
   bubbleSort(data, size);
   
