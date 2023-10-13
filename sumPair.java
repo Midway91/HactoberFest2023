@@ -1,7 +1,7 @@
 // Java program to check if there exists a pair
 // in array whose sum results in x.
 import java.io.*;
-class GFG {
+class sumPair {
 
 	// Function to find and print pair
 	static boolean chkPair(int A[], int size, int x)
