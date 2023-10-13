@@ -365,3 +365,37 @@ btndiv = Button(
 btndiv.pack(side = LEFT, expand = True, fill = "both",)
 
 root.mainloop()
+
+
+
+
+
+#a program to simulate basic calculaor 
+a = int(input('enter first number'))
+b=  int(input('enter second number'))
+
+print("choose\n 1. addition\n 2. subtraction\n 3. multiplication\n 4. division\n 5.modulus\n6.exponent")
+
+choice = input('enter choice') # don't use int for choice because cases are written as ''(string)
+match choice:
+  case '1':
+     sum =a+b
+     print('sum of {} and {} is {}'.format(a,b,sum))
+  case '2':
+     diff =a-b
+     print('difference of {} and {} is {}'.format(a,b,diff))
+  case '3':
+     mul =a*b
+     print('product of {} and {} is {}'.format(a,b,mul))
+  case '4':
+     div =a/b
+     print('quotient of {} and {} is {}'.format(a,b,div))
+  case '5':
+     mod =a+b
+     print('modulus of {} and {} is {}'.format(a,b,mod))
+  case '6':
+     exp =a+b
+     print('exponent of {} and {} is {}'.format(a,b,exp))
+  case _:
+
+     print('invalid input')
