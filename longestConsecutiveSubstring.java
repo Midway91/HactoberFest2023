@@ -13,7 +13,7 @@ Explanation: The subsequence 36, 35, 33, 34, 32 is the longest subsequence of co
 import java.io.*;
 import java.util.*;
 
-class GFG {
+class longestSubstring {
 
 	static int findLongestConseqSubseq(int arr[], int n)
 	{
