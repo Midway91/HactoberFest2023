@@ -1,92 +1,72 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-// Maze size
-#define N 4
 
-bool solveMazeUtil(int maze[N][N], int x, int y,int sol[N][N]);
-
-// A utility function to print solution matrix sol[N][N] 
-void printSolution(int sol[N][N])
-{
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++)
-			cout<<" "<<sol[i][j]<<" ";
-		cout<<endl;
+class Solution {
+void sol(int i, int j, vector < vector < int >> & arr, int n, vector < string > & ans, string move,
+	vector < vector < int >> & visited, int dir[], int djr[]) {
+	//if we reach the last cell of the matrix. just add the current move to the list of answers (ans) and return from the function, effectively stopping any further exploration.
+	if (i == n - 1 && j == n - 1) {
+	ans.push_back(move);
+	return;
 	}
-}
-
-// A utility function to check if x, y is valid index for
-// N*N maze
-bool isSafe(int maze[N][N], int x, int y)
-{
-	// if (x, y outside maze) return false
-	if (x >= 0 && x < N && y >= 0 && y < N && maze[x][y] == 1)
-		return true;
-	return false;
-}
-
-bool solveMaze(int maze[N][N])
-{
-	int sol[N][N] = { { 0, 0, 0, 0 },
-					{ 0, 0, 0, 0 },
-					{ 0, 0, 0, 0 },
-					{ 0, 0, 0, 0 } };
-	if (solveMazeUtil(maze, 0, 0, sol) == false) {
-		cout<<"Solution doesn't exist";
-		return false;
+	//initialise a string direction which represents all the directions.
+	string direction = "DLRU";
+	for (int ind = 0; ind < 4; ind++) {
+	//calculate the next row index based on the current i (row) and the di array, which holds values for direction changes.
+	int nexti = i + dir[ind];
+	//calculate the next column index based on the current j (column) and the dj array, which holds values for direction changes.
+	int nextj = j + djr[ind];
+	// to check whether is is valid to move to the next cell
+	// make sure to check if the next cell has been visited before.
+	
+	if (nexti >= 0 && nextj >= 0 && nexti < n && nextj < n && !visited[nexti][nextj] && arr[nexti][nextj] == 1) {
+	//Also Mark the current cell as visited to prevent revisiting it during the same path exploration.
+		visited[i][j] = 1;
+		// Recursively call the solve function with the updated position , the updated path move(adding the current direction), and the updated state information.
+		sol(nexti, nextj, arr, n, ans, move + direction[ind], visited, dir, djr);
+		// Reset the current cell's visited status to 0 to allow backtracking(an essential step)
+		visited[i][j] = 0;
 	}
-	printSolution(sol);
-	return true;
-}
-
-// A recursive utility function to solve Maze problem
-bool solveMazeUtil(int maze[N][N], int x, int y, int sol[N][N])
-{
-	// if (x, y is goal) return true
-	if (x == N - 1 && y == N - 1 && maze[x][y] == 1) {
-		sol[x][y] = 1;
-		return true;
 	}
-	// Check if maze[x][y] is valid
-	if (isSafe(maze, x, y) == true) {
-		// Check if the current block is already part of
-		// solution path.
-		if (sol[x][y] == 1)
-			return false;
-		// mark x, y as part of solution path
-		sol[x][y] = 1;
-		/* Move forward in x direction */
-		if (solveMazeUtil(maze, x + 1, y, sol) == true)
-			return true;
-		// If moving right didn't work
-		// move left
-		if (solveMazeUtil(maze, x - 1, y, sol) == true)
-			return true;
-		// If moving in x direction doesn't give solution
-		// then Move down in y direction
-		if (solveMazeUtil(maze, x, y + 1, sol) == true)
-			return true;
-		// If moving down didn't work
-		// move up
-		if (solveMazeUtil(maze, x, y - 1, sol) == true)
-			return true;
-		// If none of the above movements work then
-		// BACKTRACK: unmark x, y as part of solution path
-		sol[x][y] = 0;
-		return false;
+
+}
+public:
+	vector < string > Path(vector < vector < int >> & m, int n) {
+	//we intialise with vector to get all the required values.
+	vector < string > ans;
+	//for visited cell
+	vector < vector < int >> visited(n, vector < int > (n, 0));
+	int dir[] = {
+		+1,
+		0,
+		0,
+		-1
+	};
+	int djr[] = {
+		0,
+		-1,
+		1,
+		0
+	};
+	//if top-left corner of the grid is equal to 1 to verify if there is a valid starting point in the grid.
+	if (m[0][0] == 1) sol(0, 0, m, n, ans, "", visited, dir, djr);
+	return ans;
 	}
-	return false;
-}
+};
 
-// driver program to test above function
-int main()
-{
-	int maze[N][N] = { { 1, 0, 0, 0 },
-					{ 1, 1, 0, 1 },
-					{ 0, 1, 0, 0 },
-					{ 1, 1, 1, 1 } };
-	solveMaze(maze);
-	return 0;
-}
+int main() {
+int n = 4;
 
-// Greatclasher
+vector < vector < int >> m = {{1,0,0,0},{1,1,0,1},{1,1,0,0},{0,1,1,1}};
+	
+Solution obj;
+vector < string > result = obj.Path(m, n);
+if (result.size() == 0)
+	cout << -1;
+else
+	for (int i = 0; i < result.size(); i++) cout << result[i] << " ";
+cout << endl;
+
+return 0;
+}
