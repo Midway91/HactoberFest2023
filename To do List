@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@900&family=Croissant+One&family=Onest&family=Tilt+Neon&display=swap');
+        
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevent scrollbars */
+    }
+
+    .video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place the video behind other content */
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+      </style>
+  <style>
+     *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tilt Neon', sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background-clip:url(video.mp4);
+}
+.TO-DO{
+    width:100%;
+    max-width: 540px;
+    background:whitesmoke;
+    margin:100px auto 20px;
+    border-radius: 40px;
+    padding: 40px 30px 70px;
+}
+.TO-DO h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.icon{
+    height: 40px;
+    margin-left: 5px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding-left: 20px;
+    
+}
+#input-box{
+   height: 40px;
+   width: 280px;
+   border-radius: 20px;
+   border: none;
+   outline: none;
+   background: transparent;
+   text-align: center;
+   font-size: large;
+}
+.row button{
+    height: 40px;
+    width: 70px;
+    border-radius: 20px;
+    border: none;
+    background-color: orangered;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: large;
+    cursor: pointer;
+}
+ul li{
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px 8px 12px 50px;
+    font-size: 18px;
+    position: relative;
+}
+ul li::before{
+   content:'';
+   position: absolute;
+   height: 28px;
+   width: 28px;
+   border-radius: 50%;
+   background-size:cover;
+   background-position: center;
+   background-image: url(images/unchecked.png);
+   top:12px;
+   left: 5px;
+}
+ul li.checked{
+    color:#555;
+    text-decoration:line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+ul li span{
+    position: absolute;
+    right: 0px;
+    top: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+}
+ul li span:hover{
+    background:#b1b1b3;
+    border-radius: 50%;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+</head>
+<body>
+  <div class="video-container">
+    <video autoplay muted loop id="background-video">
+        <source src="tunnel_720.mp4" type="video/mp4">
+        <!-- Include additional video sources for different formats if needed -->
+    </video>
+</div>
+    <div class="container">
+      <div class="TO-DO">
+        <h1>TO-DO List <img src="images/icon.png" alt="icon-image" class="icon"></h1>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add Your Task">
+          <button onclick="addtask()">ADD</button>
+        </div>
+        <ul class="list-container">
+          <!-- <li class="checked">Task 1</li>
+          <li>Task 2</li>
+          <li>Task 3</li> -->
+        </ul>
+      </div>
+    </div>  
+</body>
+<script>
+const inputbox=document.getElementById("input-box");
+const listContainer=document.querySelector(".list-container");
+
+// const add_btn=document.getElementsByTagName("button");
+// add_btn.addEventListener("click",handleclick);
+function addtask(){
+    if(inputbox.value===''){
+        alert("You Must Assign  Some Task");
+    }
+    else{
+     // it will create li 
+      let li=document.createElement("li");
+      // it will give value to li
+      li.innerHTML=inputbox.value;
+      // this will display li under listcontainer
+      listContainer.appendChild(li); 
+
+      let span=document.createElement("span");
+      span.innerHTML="\u00D7";
+      li.appendChild(span);
+    }
+    //after adding list clear  input
+    inputbox.value="";
+    saveData();
+} 
+listContainer.addEventListener("click",function(event){
+    // li must be written in capital
+    if(event.target.tagName==="LI"){
+        event.target.classList.toggle("checked");
+        saveData();
+    }
+    // span must be written in capital 
+    else if(event.target.tagName==="SPAN"){
+        event.target.parentElement.remove();
+        saveData();
+    }
+})
+function saveData(){
+    localStorage.setItem("data",listContainer.innerHTML);
+}
+function getData(){
+    listContainer.innerHTML=localStorage.getItem("data");
+}
+getData();
+</script>
+</html>
