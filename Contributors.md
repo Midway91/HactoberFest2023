@@ -3,7 +3,7 @@ Faizan Zaheer
 Franklin Eduardo
 jose morales
 SkSadiruddin
-John  Villegas
+John Villegas
 ABHINANDAN BARUA
 Frank Edu
 seabeePraveen
@@ -13,8 +13,7 @@ Mohamad Shukry
 joy moral
 Krishna
 Pratyush Agrawal
+Hendra Hendriana
 Akash A
-Varun Patel 
+Varun Patel
 Utsav
-
-
