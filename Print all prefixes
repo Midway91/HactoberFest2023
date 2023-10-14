@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 void printAllprefixes(char str[]) {
      for(int e = 0; e<str[e]!='\0';e++) {
      for(int s=0;s<=e;s++) {
