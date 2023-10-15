@@ -1,0 +1,116 @@
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+
+p img {
+    height: 3em;
+    width: auto;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #2E8B57;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+ /* Style for the container that holds both text and image */
+.content {
+  display: flex; /* Display children side by side */
+  align-items: center; /* Vertically center the content */
+  width: 50%;
+  padding: 10px;
+}
+
+/* Style for the text container */
+.text {
+  float: right;
+  flex: 1; /* Take up remaining space in the container */
+  padding: 10px; /* Add padding for spacing */
+}
+
+/* Style for the image container */
+.image {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  max-width: 50%; /* Set a specific max width for the image (adjust as needed) */
+}
+
+/* Style for the image itself (optional) */
+.image img {
+  width: 100%; /* Ensure the image takes up the entire container width */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.main{
+  padding-left:10%;
+}
+
