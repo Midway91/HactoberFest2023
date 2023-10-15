@@ -5,10 +5,30 @@ const lightThemeButton = document.querySelector('.ChangeLightTheme');
 const buttons = document.querySelectorAll('.buttons button');
 const CalcBody = document.querySelector('.calculator');
 
-function appendToResult(value) {
-    result.value += value;
+function appendToResult(key) {
+    var val=result.value;
+    if(isOperatorKey(key))
+    {
+        var len=val.length; 
+        if(len==0)   
+           val="0"+key;
+        else if(isOperatorKey(val.charAt(len-1))) //check for last appended key ,if last appended key was an opearator ,overwrite that with current operator  
+            val=val.slice(0,-1)+key;
+        else 
+            val=val+key;
+    }
+    else 
+       val=val+key;
+    result.value=val;
 }
 
+function isOperatorKey(key)
+{
+    if(key=='+'||key=='-'||key=='*'||key=='/')
+      return true;
+    else 
+      return false;
+}
 function backSpace()
 {
     result.value=result.value.slice(0,-1)
