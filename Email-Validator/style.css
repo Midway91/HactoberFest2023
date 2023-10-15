@@ -1,0 +1,107 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 10px 40px ;
+}
+
+ul{
+  display: flex;
+}
+
+ul li{
+  list-style: none;
+  padding: 0 13px;
+}
+
+ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+ul>li>a:hover{
+  color: rgb(164, 181, 209);
+}
+
+main{
+  min-height: 100vh;
+
+}
+.container{
+  background-color: aquamarine;
+  max-width: 80vw;
+  margin: auto;
+  padding: 9px 15px;
+}
+.container h1{
+  padding: 12px 0px;
+}
+.btn{
+  background-color: black;
+  color:aliceblue;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ .Validresult div::first-letter{ /*jitni bhi div hai unke first letter ko uppercase krde.*/
+  text-transform: uppercase;
+}
+
+input[type='text']{
+  min-width: 23vw;
+  padding: 4px 12px;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+.logo img{
+  width: 20px;
+  filter: invert(1);
+  vertical-align: text-top;
+}
+footer{
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+@media only screen and (max-width:600px){
+  body{
+    background-color: aqua;
+  }
+  .container{
+    font-size: 12px;
+    
+  }
+  nav{
+    flex-direction: column;
+  }
+  .logo{
+    padding: 6px 0;
+    } 
+  .logo img{
+    width: 20px;
+    filter: invert(1);
+    vertical-align: text-top;
+  }
+  .logo span{
+    font-size: 20px;
+  }
+}
