@@ -8,6 +8,7 @@ ABHINANDAN BARUA
 Frank Edu
 seabeePraveen
 Pranav
+Rohit Pandey
 mohamed mahfouz
 Mohamad Shukry
 joy moral
