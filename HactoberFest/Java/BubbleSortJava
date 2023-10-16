@@ -1,0 +1,21 @@
+public class BubbleSorting{
+    public static void main(String[] args) {
+        int arr[] = {4,2,6,7,3,8,1,9};
+        boolean swappedSomething = true;
+        int temp = 0;
+        while(swappedSomething){
+            swappedSomething = false;
+            for (int i = 0; i < arr.length-1; i++) {
+                if(arr[i]>arr[i+1]){
+                    swappedSomething = true;
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+        }
+        for (int i : arr) {
+            System.out.println(i);
+        }
+    }
+}
