@@ -5,7 +5,7 @@
  * OS Used       : Windows 10-64bit
  * Compiler      : MinGW-32 64bit C/C++ Compiler
  * IDE           : VS Code Editor
- * ***********************************************************************/
+ * **********************************************************************/
 
 // As we can see there is no notepad is open in the bottom section of the window
 #ifdef _WIN32
