@@ -1,7 +1,7 @@
 import dis
 from tkinter import *
 from tkinter import messagebox
-import ctypes, os
+import ctypes, os 
 ctypes.windll.shcore.SetProcessDpiAwareness(True)
 
 root = Tk()
