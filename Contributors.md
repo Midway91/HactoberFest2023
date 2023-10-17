@@ -15,6 +15,7 @@ mohamed mahfouz
 Patrick Navarro
 Mohamad Shukry
 joy moral
+Chinmay Jain
 Ankit Solanki
 Krishna
 Pratyush Agrawal
