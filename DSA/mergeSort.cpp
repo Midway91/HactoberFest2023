@@ -1,81 +1,95 @@
-// Problem:  Given an array of size n, sort the array using Merge Sort.
-
-// Examples:
-
-// Example 1:
-// Input: N=7,arr[]={3,2,8,5,1,4,23}
-// Output: 1,2,3,4,5,8,23
-
-// Example 2:
-// Input: N=5, arr[]={4,2,1,6,7}
-// Output: 1,2,4,6,7,
-
-
-
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void merge(vector<int> &arr, int low, int mid, int high) {
-    vector<int> temp; 
-    int left = low;      
-    int right = mid + 1;   
+void merge(int *arr, int s, int e)
+{
 
-    //storing elements in the temporary array in a sorted manner//
+    int mid = (s + e) / 2;
 
-    while (left <= mid && right <= high) {
-        if (arr[left] <= arr[right]) {
-            temp.push_back(arr[left]);
-            left++;
+    int len1 = mid - s + 1;
+    int len2 = e - mid;
+
+    int *first = new int[len1];
+    int *second = new int[len2];
+
+    // copy values
+    int mainArrayIndex = s;
+    for (int i = 0; i < len1; i++)
+    {
+        first[i] = arr[mainArrayIndex++];
+    }
+
+    mainArrayIndex = mid + 1;
+    for (int i = 0; i < len2; i++)
+    {
+        second[i] = arr[mainArrayIndex++];
+    }
+
+    // merge 2 sorted arrays
+    int index1 = 0;
+    int index2 = 0;
+    mainArrayIndex = s;
+
+    while (index1 < len1 && index2 < len2)
+    {
+        if (first[index1] < second[index2])
+        {
+            arr[mainArrayIndex++] = first[index1++];
         }
-        else {
-            temp.push_back(arr[right]);
-            right++;
+        else
+        {
+            arr[mainArrayIndex++] = second[index2++];
         }
     }
 
-    // if elements on the left half are still left //
-
-    while (left <= mid) {
-        temp.push_back(arr[left]);
-        left++;
+    while (index1 < len1)
+    {
+        arr[mainArrayIndex++] = first[index1++];
     }
 
-    //  if elements on the right half are still left //
-    while (right <= high) {
-        temp.push_back(arr[right]);
-        right++;
+    while (index2 < len2)
+    {
+        arr[mainArrayIndex++] = second[index2++];
     }
 
-    // transfering all elements from temporary to arr //
-    for (int i = low; i <= high; i++) {
-        arr[i] = temp[i - low];
-    }
+    delete[] first;
+    delete[] second;
 }
 
-void mergeSort(vector<int> &arr, int low, int high) {
-    if (low >= high) return;
-    int mid = (low + high) / 2 ;
-    mergeSort(arr, low, mid);  // left half
-    mergeSort(arr, mid + 1, high); // right half
-    merge(arr, low, mid, high);  // merging both sorted halves
+void mergeSort(int *arr, int s, int e)
+{
+
+    // base case
+    if (s >= e)
+    {
+        return;
+    }
+
+    int mid = (s + e) / 2;
+
+    // left part sort karna h
+    mergeSort(arr, s, mid);
+
+    // right part sort karna h
+    mergeSort(arr, mid + 1, e);
+
+    // merge
+    merge(arr, s, e);
 }
 
-int main() {
+int main()
+{
 
-    vector<int> arr = {9, 4, 7, 6, 3, 1, 5}  ;
-    int n = 7;
+    int arr[15] = {3, 7, 0, 1, 5, 8, 3, 2, 34, 66, 87, 23, 12, 12, 12};
+    int n = 15;
 
-    cout << "Before Sorting : " << endl;
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " "  ;
-    }
-    cout << endl;
     mergeSort(arr, 0, n - 1);
-    cout << "After Sorting : " << endl;
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " "  ;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
     }
     cout << endl;
-    return 0 ;
-}
 
+    return 0;
+}
