@@ -7,6 +7,7 @@ John  Villegas
 ABHINANDAN BARUA
 Frank Edu
 seabeePraveen
+Parul Chaddha
 Pranav
 Rohit Pandey
 mohamed mahfouz
@@ -19,4 +20,3 @@ Akash A
 Varun Patel 
 Utsav
 Kirtika Gautam
-
