@@ -12,6 +12,7 @@ seabeePraveen
 Pranav
 Rohit Pandey
 mohamed mahfouz
+Patrick Navarro
 Mohamad Shukry
 joy moral
 Ankit Solanki
