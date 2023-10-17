@@ -1,0 +1,215 @@
+---------------------------------------------------------------------------------------------------index.html-----------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>Tip Calculator</title>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    </head>
+
+    <body>
+
+        <div id="container">
+            <h1>Charles' Tip Calculator</h1>
+
+            <div id="calculator">
+                <form>
+                    <label>
+                        How much was your bill?<br>
+                        $ <input type="text" id="billAmount"><br>
+                    </label>
+                    <label>
+                        How was your service?<br>
+                        <select id="serviceQuality">
+                            <option disabled selected value="0">-- Choose an option --</option>
+
+                            <option value="0.3">30% - Outstanding</option> 
+                            <option value="0.2">20% - Good</option>
+                            <option value="0.15">15% - It was okay</option>
+                            <option value="0.1">10% - Bad</option>
+                            <option value="0.05">5%  - Terrible</option>
+                        </select>
+                    </label><br>
+                    <label>
+                        How many people are sharing the bill?<br>
+                        <input type="text" id="totalPeople"> people
+                    </label><br>
+                    <button type="button" id="calculate"> Calculate!</button>
+
+                </form>
+
+            </div> <!--calculator-->
+
+            <div id="totalTip">
+                    <sup>$</sup><span id="tip">0.00</span>
+                    <small id="each">each</small>
+
+            </div><!--totalTip-->
+
+        </div> <!--container-->
+
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>
+
+
+
+----------------------------------------------------------------------------------------------------------------------------script.js----------------------------------------------------------------------
+
+
+
+//Custom function
+function calculateTip() {
+    
+//Store the data of the inputs
+var billAmount =document.getElementById("billAmount").value;
+var serviceQuality = document.getElementById("serviceQuality").value;
+var numPeople = document.getElementById("totalPeople").value;
+
+//Quick validation
+if(billAmount==="" || serviceQuality == 0){
+    window.alert("Please enter some values to get this baby up and running!");
+    return; // this will prevent the function from continuing
+}
+
+//Check to see if this input is empty or less than or equal to 1
+if(numPeople ===""|| numPeople <=1) {
+    numPeople =1;
+
+    document.getElementById("each").style.display = "none;"
+
+} else{
+
+     document.getElementById("each").style.display = "block";
+}
+
+//Do some math!
+var total = (billAmount*serviceQuality)/ numPeople;
+total = Math.round(total*100)/100;
+total= total.toFixed(2);
+
+//Display the tip!
+document.getElementById("totalTip").style.display = "block";
+document.getElementById("tip").innerHTML = total;
+
+}
+
+
+
+//Hide the tip amount on load
+document.getElementById("totalTip"). style.display ="none";
+document.getElementById("each"). style.display = "none";
+
+//Clicking the button calls our custom function
+document.getElementById("calculate").onclick= function(){calculateTip();};
+
+
+
+
+------------------------------------------------------------------------------------------styles.css------------------------------------------------------------------------------------------------------
+
+/*styles.css*/
+
+body {
+    background: #333 url(img/food8.jpeg) center center no-repeat;
+    background-size: cover;
+    color:#532827;
+}
+
+#container{
+    width: 400px;
+    margin: 40px auto 0;
+    padding: 50px;
+    box-sizing: border-box;
+    background: url(img/paper-pattern.jpg)top left repeat;
+    box-shadow: 0 10px 15px -8px #000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1{
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    border-bottom: solid 1px #ddd;
+    
+}
+
+form{
+    text-align: left;
+}
+
+form label{
+    display: block;
+    margin:25px 0;
+    font-weight: bold;
+}
+
+form input,
+form select{
+    padding: 8px;
+    margin: 10px 0;
+}
+
+form input[type="text"]{
+    width: 90px;
+}
+
+button{
+    background: #6c2726;
+    color: white;
+    border-bottom:solid 4px #222;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+bottom:hover{
+    background:#4c2827;
+    border-bottom-color: #111;
+}
+
+button:active{
+
+    position: relative;
+    top: 3px;
+}
+
+#totalTip{
+
+    font-size: 50px;
+    margin-top: 40px;
+}
+
+#totalTip:before{
+
+    content: "Tip amount";
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    text-transform: uppercase;
+}
+
+#totalTip sup{
+
+   font-size: 24px;
+   top: -18px;
+}
+
+#totalTip small{
+
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
