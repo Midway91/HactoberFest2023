@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Investment Calculator</title>
+</head>
+<body>
+    <h1>Investment Calculator</h1>
+    <form id="investmentForm">
+        <label for="principal">Initial Principal:</label>
+        <input type="number" id="principal" placeholder="Enter the initial amount" required>
+        <br>
+        <label for="interestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter the annual interest rate" required>
+        <br>
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years" placeholder="Enter the number of years" required>
+        <br>
+        <button type="button" onclick="calculateInvestment()">Calculate</button>
+    </form>
+    <p>Future Value of Investment: $<span id="futureValue"></span></p>
+
+    <script>
+        function calculateInvestment() {
+            var principal = parseFloat(document.getElementById("principal").value);
+            var interestRate = parseFloat(document.getElementById("interestRate").value);
+            var years = parseInt(document.getElementById("years").value);
+
+            if (isNaN(principal) || isNaN(interestRate) || isNaN(years)) {
+                alert("Please enter valid numbers for principal, interest rate, and years.");
+            } else {
+                var futureValue = principal * Math.pow(1 + (interestRate / 100), years);
+                document.getElementById("futureValue").textContent = futureValue.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
