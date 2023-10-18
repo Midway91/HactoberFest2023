@@ -1,59 +1,65 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <list>
+#include <vector>
 using namespace std;
 
-class Solution {
-  public:
-    // Function to return Breadth First Traversal of given graph.
-    vector<int> bfsOfGraph(int V, vector<int> adj[]) {
-        int vis[V] = {0}; 
-        vis[0] = 1; 
-        queue<int> q;
-        // push the initial starting node 
-        q.push(0); 
-        vector<int> bfs; 
-        // iterate till the queue is empty 
-        while(!q.empty()) {
-           // get the topmost element in the queue 
-            int node = q.front(); 
-            q.pop(); 
-            bfs.push_back(node); 
-            // traverse for all its neighbours 
-            for(auto it : adj[node]) {
-                // if the neighbour has previously not been visited, 
-                // store in Q and mark as visited 
-                if(!vis[it]) {
-                    vis[it] = 1; 
-                    q.push(it); 
-                }
-            }
-        }
-        return bfs; 
-    }
+class Graph {
+    int V;
+    vector<list<int>> adj;
+    bool isCyclicUtil(int v, vector<bool>& visited, int parent);
+
+public:
+    Graph(int V);
+    void addEdge(int v, int w);
+    bool isCyclic();
 };
 
-void addEdge(vector <int> adj[], int u, int v) {
-    adj[u].push_back(v);
-    adj[v].push_back(u);
+Graph::Graph(int V) : V(V), adj(V) {}
+
+void Graph::addEdge(int v, int w) {
+    adj[v].push_back(w);
+    adj[w].push_back(v);
 }
 
-void printAns(vector <int> &ans) {
-    for (int i = 0; i < ans.size(); i++) {
-        cout << ans[i] << " ";
+bool Graph::isCyclicUtil(int v, vector<bool>& visited, int parent) {
+    visited[v] = true;
+
+    for (int i : adj[v]) {
+        if (!visited[i]) {
+            if (isCyclicUtil(i, visited, v))
+                return true;
+        } else if (i != parent) {
+            return true;
+        }
     }
+    return false;
 }
 
-int main() 
-{
-    vector <int> adj[6];
-    
-    addEdge(adj, 0, 1);
-    addEdge(adj, 1, 2);
-    addEdge(adj, 1, 3);
-    addEdge(adj, 0, 4);
+bool Graph::isCyclic() {
+    vector<bool> visited(V, false);
 
-    Solution obj;
-    vector <int> ans = obj.bfsOfGraph(5, adj);
-    printAns(ans);
+    for (int u = 0; u < V; u++) {
+        if (!visited[u]) {
+            if (isCyclicUtil(u, visited, -1))
+                return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    Graph g1(5);
+    g1.addEdge(1, 0);
+    g1.addEdge(0, 2);
+    g1.addEdge(2, 1);
+    g1.addEdge(0, 3);
+    g1.addEdge(3, 4);
+    g1.isCyclic() ? cout << "Graph contains cycle\n" : cout << "Graph doesn't contain cycle\n";
+
+    Graph g2(3);
+    g2.addEdge(0, 1);
+    g2.addEdge(1, 2);
+    g2.isCyclic() ? cout << "Graph contains cycle\n" : cout << "Graph doesn't contain cycle\n";
 
     return 0;
 }

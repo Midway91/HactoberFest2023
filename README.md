@@ -158,6 +158,20 @@ I will merge all pull requests as quickly as possible, as long as they meet the 
 <br>
 Happy coding!
 
+## Steps to execute Docker Image
+
+```shell
+docker build -t my-nginx-hacktoberfest .
+```
+
+```shell
+docker run -d -p 80:80 my-nginx-hacktoberfest
+```
+
+## Dockerized Result
+
+![Alt text](image.png)
+
 
 ## Project Admin 😎:
 
