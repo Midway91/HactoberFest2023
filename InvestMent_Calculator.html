@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simon Game</title>
+    <style>
+        .button {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simon Game</h1>
+    <div id="buttons">
+        <div class="button" id="green" onclick="handleButtonClick('green')"></div>
+        <div class="button" id="red" onclick="handleButtonClick('red')"></div>
+        <div class="button" id="yellow" onclick="handleButtonClick('yellow')"></div>
+        <div class="button" id="blue" onclick="handleButtonClick('blue')"></div>
+    </div>
+    <button id="startButton" onclick="startGame()">Start</button>
+    <p id="score">Score: 0</p>
+
+    <script>
+        const simonSequence = [];
+        const playerSequence = [];
+        let gameOn = false;
+        let score = 0;
+
+        function getRandomColor() {
+            const colors = ['green', 'red', 'yellow', 'blue'];
+            const randomColor = colors[Math.floor(Math.random() * 4)];
+            return randomColor;
+        }
+
+        function animateButton(color) {
+            const button = document.getElementById(color);
+            button.style.opacity = 1;
+            setTimeout(() => {
+                button.style.opacity = 0.6;
+            }, 300);
+        }
+
+        function playSimonSequence() {
+            for (let i = 0; i < simonSequence.length; i++) {
+                setTimeout(() => {
+                    animateButton(simonSequence[i]);
+                }, i * 600);
+            }
+            setTimeout(() => {
+                enableButtons();
+            }, simonSequence.length * 600);
+        }
+
+        function handleButtonClick(color) {
+            animateButton(color);
+            playerSequence.push(color);
+            if (playerSequence.length === simonSequence.length) {
+                if (JSON.stringify(playerSequence) === JSON.stringify(simonSequence)) {
+                    score++;
+                    document.getElementById('score').textContent = `Score: ${score}`;
+                    setTimeout(() => {
+                        nextRound();
+                    }, 1000);
+                } else {
+                    endGame();
+                }
+            }
+        }
+
+        function startGame() {
+            if (!gameOn) {
+                gameOn = true;
+                score = 0;
+                simonSequence.length = 0;
+                playerSequence.length = 0;
+                nextRound();
+            }
+        }
+
+        function endGame() {
+            gameOn = false;
+            alert(`Game over! Your score is ${score}`);
+        }
+
+        function nextRound() {
+            playerSequence.length = 0;
+            disableButtons();
+            simonSequence.push(getRandomColor());
+            setTimeout(() => {
+                playSimonSequence();
+            }, 1000);
+        }
+
+        function enableButtons() {
+            document.querySelectorAll('.button').forEach(button => {
+                button.style.pointerEvents = 'auto';
+            });
+        }
+
+        function disableButtons() {
+            document.querySelectorAll('.button').forEach(button => {
+                button.style.pointerEvents = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
