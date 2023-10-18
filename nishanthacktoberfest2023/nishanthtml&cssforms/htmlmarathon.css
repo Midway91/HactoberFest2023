@@ -1,0 +1,27 @@
+h1{
+    background-color: palegoldenrod;
+    border: 1 px solid black;
+    display: inline;
+
+}
+input{
+    background-color: paleturquoise;
+    border: 1px solid black;
+    display: block;
+}
+
+h2{
+    background-color: aqua;
+    border:40px ;
+    border-radius: 50%;
+    display: block;
+}
+button{
+    background-color: darkgoldenrod;
+    font-style: italic;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
+button:hover{
+    background-color: gold;
+}
