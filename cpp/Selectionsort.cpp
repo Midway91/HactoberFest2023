@@ -66,12 +66,25 @@ void printArray(int arr[], int size)
 int main()
 {
 
-    int arr[] = { 64, 25, 12, 22, 11 };
+   // int arr[] = { 64, 25, 12, 22, 11 };
 
-    int n = sizeof(arr) / sizeof(arr[0]);
+    //int n = sizeof(arr) / sizeof(arr[0]);
  
 
     // Function Call
+
+   //making dynamic array wsing vector
+
+  int inputLength ;
+ cin>> inputLength;
+
+ vector<int> arr;
+
+ for(int i=0;i<inputLength;i++){
+  int x;
+  cin>>x;
+  arr.push_back(x);
+ }
 
     selectionSort(arr, n);
 
