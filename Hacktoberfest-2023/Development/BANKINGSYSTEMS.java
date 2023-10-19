@@ -38,7 +38,7 @@ class BankAccount {
     }
 }
 
-public class BankingSystem {
+public class BANKINGSYSTEMS {
     private static Map<String, BankAccount> accounts = new HashMap<>();
 
     public static void main(String[] args) {
