@@ -1,0 +1,1 @@
+/* given a directed graph from n nodes numbered from o to n-1. atmost one outgoing edge .... array edges sizre n node i to node edges [i ] then edges[i], then edges[i]==-1...return length of the longest cycle in the gaph if no cycle exists return -1, a cycle is a path start end at samenode...*/
