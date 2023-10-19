@@ -1,0 +1,182 @@
+ #include  
+ #include  
+ #include  
+ class ping  
+ {  
+     int day,snowfall,rainfall,lowtemp,hightemp;  
+     public:  
+       static int count ;         
+       ping();            
+       ping(int,int,int,int,int);      
+       ping::ping(ping &z)         
+       {  
+         day=z.day;  
+         hightemp=z.hightemp;  
+         lowtemp=z.lowtemp;  
+         snowfall=z.snowfall;  
+         rainfall=z.rainfall;  
+       }  
+       int dayno();  
+       void daily();  
+       void copy(int,int,int,int,int) ;  
+       void change(int );  
+ };  
+ int ping::count ;  
+ ping::ping()  
+ {  
+     day=99;  
+     hightemp=999;  
+     lowtemp=-999;  
+     snowfall=0;  
+     rainfall=0;  
+     cout<< "\t\t\tRecord created\n";  
+ }  
+ void ping::change(int dom)  
+ {  
+   day=dom;  
+ }  
+ ping::ping(int dom,int ht,int lt,int s,int r)  
+ {  
+     day= dom;  
+     hightemp=ht;  
+     lowtemp=lt;  
+     snowfall=s;  
+     rainfall=r;  
+ }  
+ void ping::daily()  
+ {  
+     cout << "\t ";  
+     cout << hightemp << "\t\t ";  
+     cout << lowtemp << "\t ";  
+     cout << snowfall << "\t ";  
+     cout << rainfall << "\t ";  
+ }  
+ int ping::dayno()  
+ {  
+     return day;  
+ }  
+ void main()  
+ {  
+     int ch,i=0,j,flag=0;  
+     int k,temp;  
+     ping *array[31];  
+     do  
+       {  
+         clrscr();  
+         cout << "\t\t\t\t***Main Menu***\n";  
+         cout << "\t\t\t\t1.Create Daily Report\n";  
+         cout << "\t\t\t\t2.Display Daily Report\n";  
+         cout << "\t\t\t\t3.Display Monthly Report\n";  
+         cout << "\t\t\t\t4.Delete a record\n";  
+         cout << "\t\t\t\t5.Exit\n";  
+         cout << "\t\t\t\tEnter your choice:\n";  
+         cin >> ch;  
+         switch(ch)  
+           {  
+               case 1:  
+                   do  
+                   {  
+                     int dom;  
+                     temp=0 ;  
+                     cout<<"\n\t\tEnter date of month: ";  
+                     cin>>dom;  
+                     array[i]->count++;  
+                     if(array[i]->count>1)  
+                     {  
+                           cout <<"\nDO U WANT TO COPY DATA FROM PREVIOUS DAY (y/n)";  
+                           if(getche()=='y'||getche()=='Y')  
+                           {  
+                                 array[i]=new ping;  
+                                 *array[i]=*array[i-1];  
+                                 array[i]->change(dom);  
+                                 i=i+1;  
+                                 temp=1;  
+                           }  
+                     }  
+                     if(temp==0)  
+                     {  
+                         int ht ;  
+                         cout << "\tEnter maximum temperature: ";  
+                         cin >> ht;  
+                         int lt;  
+                         cout << "\tEnter the minimum temperature: ";  
+                         cin >> lt;  
+                         int s;  
+                         cout << "\tEnter amount of snowfall: ";  
+                         cin >> s;  
+                         int r;  
+                         cout << "\tEnter amount of rainfall: ";  
+                         cin >> r ;  
+                         array[i++]=new ping(dom,ht,lt,r,s);  
+             }  
+             cout<<"\n\t\tDO U WANT TO ENTER MORE:";  
+         }while(getche()=='y'||getche()=='Y');  
+           break;  
+       case 2:  
+           cout << "\t\t\tDisplay Daily Report\n";  
+           cout << "\tEnter the day to be viewed: ";  
+           cin>>k;  
+           for(j=0;j<i;j++) <br="">             if(array[j]->dayno()==k)  
+             {  
+               cout<<"\n\n   Day Temperature  AmtRain AmtSnow";  
+               cout<<"\n"<<"     ";  
+               array[j]->daily();  
+               getch();  
+               break;  
+             }  
+           if(j==i)  
+           {  
+             cout<<"\nRecord not found ";  
+             cout<<"\nNOT AVAILABLE";  
+             getch();  
+           }  
+           break;  
+       case 3:  
+           clrscr();  
+           cout<<"\n\t\tWEATHER REPORT";  
+           if(i==0)  
+           {  
+             cout<<"\n\nRecord not found...";  
+             break;  
+           }  
+           else  
+             cout<<"\n\n   Day Temperature  AmtRain AmtSnow";  
+             cout<<"\n"<<"     ";  
+           for(j=0;j<i;j++) <br="">           {  
+             cout<<"\n"<<"     ";  
+             array[j]->daily();  
+           }  
+           getch();  
+           break;  
+           break;  
+       case 4:  
+           cout<<"\nENTER THE DATE WHICH U WANT TO DELETE:";  
+           int dom;  
+           cin>>dom;  
+           for(j=0;j<i;j++) <br="">           {  
+               if(array[j]->dayno()==dom)  
+               {  
+                 delete array[j];  
+                 while(j<i) <br="">                 {  
+                   array[j]=array[j+1];  
+                   j++;  
+                 }  
+                 j--;  
+                 break;  
+               }  
+             }  
+             if(j==i)  
+               cout<<"\nDATE IS NOT FOUND";  
+             else  
+               {  
+                 array[i]->count--;  
+                 i--;  
+               }  
+               break;  
+       case 5 :  
+           break ;  
+       default:  
+           cout<< " \t\tWrong choice...Enter again\n ";  
+     }  
+   }while(ch!=5);  
+ }

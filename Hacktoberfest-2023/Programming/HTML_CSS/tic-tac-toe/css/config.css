@@ -1,0 +1,80 @@
+#ovrl{
+  text-align: center;
+}
+
+#ovrl h2{
+  margin: .5rem 0;
+}
+
+.form{
+  margin: .5rem 0;
+}
+
+.form label{
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+
+.form input{
+  font: inherit;
+  border: 1px solid #cccccc;
+  width: 15rem;
+  padding: .35rem;
+}
+
+.error label{
+  color: #880202;
+}
+
+.error input{
+  border-color: #880202;
+  color: #880202;
+  background-color: #fddbdb;
+}
+
+#error{
+  color: #880202;
+  font-weight: bold;
+}
+
+#config{
+  width: 90%;
+  max-width: 40rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+#config ol{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#config li{
+  margin: 1rem;
+  padding: 1rem;
+  width: 50%;
+  background-color: #f3e3ff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px #00000033;
+}
+
+#config h2{
+  font-size: 1rem;
+  margin: .5rem 0;
+}
+
+#config h3{
+  font-size: 1.5rem;
+  margin: .5rem 0;
+  color: #0904a8;
+}
+
+.sym{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2f0452;
+  margin: .5rem 0;
+}

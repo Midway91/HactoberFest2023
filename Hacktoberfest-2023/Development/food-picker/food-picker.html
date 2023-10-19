@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decide What to Eat</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #result {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Decide What to Eat</h1>
+    <button onclick="decide()">Decide for Me</button>
+    <p id="result"></p>
+
+    <h2>Your Food Choices:</h2>
+    <input type="text" id="newItem" placeholder="Type a food choice..." />
+    <button onclick="addItem()">Add to List</button>
+    <ul id="foodList">
+      <!-- List items will appear here -->
+    </ul>
+
+    <script>
+      const options = [];
+
+      function decide() {
+        const userAddedOptions = Array.from(
+          document.querySelectorAll("#foodList li")
+        ).map((item) => item.textContent);
+        const allOptions = [...options, ...userAddedOptions];
+
+        if (allOptions.length === 0) {
+          document.getElementById("result").textContent =
+            "Add some food choices first.";
+          return;
+        }
+
+        const randomIndex = Math.floor(Math.random() * allOptions.length);
+        const chosenOption = allOptions[randomIndex];
+        document.getElementById(
+          "result"
+        ).textContent = `How about ${chosenOption} tonight?`;
+      }
+
+      function addItem() {
+        const newItemText = document.getElementById("newItem").value;
+        if (newItemText.trim() !== "") {
+          const listItem = document.createElement("li");
+          listItem.textContent = newItemText;
+          document.getElementById("foodList").appendChild(listItem);
+          document.getElementById("newItem").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
