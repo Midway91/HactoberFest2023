@@ -14,7 +14,7 @@ if not os.path.isfile(image_path):
 
 image = cv2.imread(image_path)
 
-# Check if the image is loaded successfully
+# Check if the image is loaded successfull
 if image is None:
     print("Failed to load image")
     exit()
