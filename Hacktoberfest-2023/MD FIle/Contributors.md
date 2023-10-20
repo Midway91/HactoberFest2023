@@ -24,6 +24,7 @@ joy moral
 Ankit Solanki
 Tayyab Hussain
 Krishna
+Suraj Nanavare
 Abhinaya Panthi
 Pratyush Agrawal
 Akash A
