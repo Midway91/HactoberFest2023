@@ -2,6 +2,28 @@
 
 ![Hacktoberfest Logo](./assets/hacktoberfest_wall.png)
 
+# Table of content
+1. [Introduction](#introduction)
+1. [Guidelines](#guidelines)
+1. [What is Hacktoberfest?](#what-is-hacktoberfest)
+1. [How Does It Work?](#how-does-it-work)
+1. [Rules](#rules)
+1. [How Can I Contribute?](#how-can-i-contribute)
+1. [Let's Get Started!](#lets-get-started)
+1. [First Contributions](#first-contributions)
+1. [Step 1: Fork this repository](#step-1-fork-this-repository)
+1. [Step 2: Clone the repository](#step-2-clone-the-repository)
+1. [Step 3: Create a branch](#step-3-create-a-branch)
+1. [Step 4: Make necessary changes and commit them](#step-4-make-necessary-changes-and-commit-them)
+1. [Step 5: Push your changes to GitHub](#step-5-push-your-changes-to-github)
+1. [Step 6: Submit your changes for review](#step-6-submit-your-changes-for-review)
+1. [What's next?](#whats-next)
+1. [Merge Policy:](#merge-policy)
+1. [Steps to execute Docker Image](#steps-to-execute-docker-image)
+1. [Dockerized Result](#dockerized-result)
+1. [Project Admin 😎](#project-admin-😎)
+1. [Project Contributors ⭐](#project-contributors-⭐)
+
 ## Introduction
 ## Guidelines:
 
