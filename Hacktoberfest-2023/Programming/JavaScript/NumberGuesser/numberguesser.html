@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="text" id="guessField">
+    <input type="submit" value="Submit Guess" id="guessSubmit">
+    <p class="message"></p>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        
+        const guessField = document.getElementById('guessField');
+        const guessSubmit = document.getElementById('guessSubmit');
+        const message = document.querySelector('.message');
+
+        let attempts = 0;
+
+        
+        function checkGuess() {
+            const userGuess = Number(guessField.value);
+            attempts++;
+
+            if (userGuess === randomNumber) {
+                message.textContent = `Congratulations! You guessed the correct number in ${attempts} attempts.`;
+                message.style.backgroundColor = 'green';
+                message.style.color = 'white';
+                gameOver();
+            } else if (attempts === 10) {
+                message.textContent = `Game over! The correct number was ${randomNumber}.`;
+                message.style.backgroundColor = 'red';
+                message.style.color = 'white';
+                gameOver();
+            } else if (userGuess > randomNumber) {
+                message.textContent = `Too high! Try again. Attempts: ${attempts}`;
+                message.style.backgroundColor = 'blue';
+                message.style.color = 'white';
+            } else {
+                message.textContent = `Too low! Try again. Attempts: ${attempts}`;
+                message.style.backgroundColor = 'yellow';
+            }
+
+            guessField.value = '';
+            guessField.focus();
+        }
+
+        
+        function gameOver() {
+            guessField.disabled = true;
+            guessSubmit.disabled = true;
+        }
+
+        guessSubmit.addEventListener('click', checkGuess);
+
+    </script>
+</body>
+</html>
