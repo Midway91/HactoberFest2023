@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device width, initial scale=1">
+        <title>Calculator | Minor Project 2</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+        <style>
+            body{
+                background-color: rgb(255, 251, 251);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .main{
+                opacity: 1 !important;
+            }
+            .calc-btn{
+                width: 60px;
+                height: 60px;
+                border: 1px dotted rgb(66, 66, 66);
+            }
+            .calc-display{
+                background-color: rgb(116, 114, 114);
+                color: white;
+                height: 100px;
+                width: 312px;
+                border-radius: 5px;
+            }
+            .num-btn{
+                background-color: rgb(39, 38, 38);
+                color: whitesmoke;
+            }
+            .inputstring{
+                margin-top: 5px;
+                height: 20px;
+                display: block;
+                font-size: 20px;
+            }
+            .expressionstring{
+                margin-top: 5px;
+                height: 20px;
+                display: block;
+                font-size: 20px;
+            }
+            .valuestring{
+                margin-top: 5px;
+                height: 20px;
+                display: block;
+                font-size: 20.1px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container main p-5">
+            <div class="d-flex justify-content-center" >
+                <div class="col-xsm-12 col-sm-10 col-md-7 col-lg-6 col-xl-4 col-xxl-4" >
+                    <div class="card">
+                        
+                        <div class="d-flex justify-content-center p-3 align-text-center" style="background-color: black;">
+                            <div class="row" >
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 calc-display" >
+                                    <div id="number_div" class="inputstring">0</div>
+                                    <div id="expression" class="expressionstring"></div>
+                                    <div id="value_div" class="valuestring"></div>
+                                </div>
+                                <input type="hidden" id="savedExpression">
+                                
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center p-3 align-text-center" style="background-color: rgb(19, 19, 19);">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="NumLock" style="background-color: rgb(10, 10, 10); color: rgb(182, 136, 77);"><small>Num Lock</small></button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="Delete" style="background-color: rgb(10, 10, 10); color: rgb(235, 101, 12);">CE</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="Delete" style="background-color: rgb(10, 10, 10); color: rgb(170, 216, 219);">Del</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="/" style="background-color: rgb(10, 10, 10); color: rgb(235, 228, 164);">/</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center p-3 align-text-center" style="background-color: black;">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="7">7</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="8">8</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="9">9</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="*" style="background-color: rgb(10, 10, 10); color: rgb(235, 228, 164);">x</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center p-3 align-text-center" style="background-color: black;">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="4">4</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="5">5</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="6">6</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="-" style="background-color: rgb(10, 10, 10); color: rgb(235, 228, 164);">-</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center p-3 align-text-center" style="background-color: black;">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="1">1</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="2">2</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" data-event_key="3">3</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="+" style="background-color: rgb(10, 10, 10); color: rgb(235, 228, 164);">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center p-3 align-text-center" style="background-color: black;">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                    <button type="button" class="btn btn-light calc-btn num-btn" style="width: 150px;" data-event_key="0">0</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="." style="background-color: rgb(10, 10, 10); color: rgb(235, 228, 164);">.</button>
+                                </div>
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <button type="button" class="btn btn-light calc-btn" data-event_key="=" style="background-color: rgb(233, 65, 14);">=</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).on('keypress',function(e){
+                $('button[data-event_key="'+e.key+'"]'.addClass('active'))
+                if((e.keyCode >=48 && e.keyCode <=57) || (e.keyCode >=96 && e.keyCode <=108)){
+                    appendNumber(e.key)
+                } else {
+                    if(e.key=='+' || e.key=='-' || e.key=='*' || e.key=='/'){
+                        generateExpression(e.key)
+                    }else if(key == '=' ){
+                            evaluateExpression()
+                    }else if(key == 'Delete'){
+                        clearCalc()
+                    }
+                }
+                console.log(e.key);
+            })
+
+            $(document).on('keyup',function(e){
+                $('button[data-event_key="'+e.key+'"]'.removeClass('active'))
+                
+                console.log(+e.key);
+            })
+
+            $('.calc-btn').on('click',function(e){
+                var key =$(this).data('event_key')
+                if(key != '-' && key != '+' && key != '=' && key != '.' && key != '*' && key != '/' && key != 'Delete' && key != 'NumLock'){
+                  appendNumber(key)  
+                } else {
+                    if(key=='+' || key=='-' || key=='*' || key=='/'){
+                        generateExpression(key)
+                    }else if(key == '=' ){
+                            evaluateExpression()
+                    }else if(key == 'Delete'){
+                        clearCalc()
+                    }
+                    }
+                console.log(key)
+            })
+
+            function appendNumber(number){
+                var existingNumber = $("#number_div").html();
+                console.log(existingNumber);
+                var currentString = number;
+                var outputString = '';
+                if(existingNumber != '' && existingNumber != undefined && existingNumber != null){
+                    if(existingNumber=='0'){
+                        outputString = number
+                    }else{
+                        outputString = existingNumber+=currentString
+                    }
+                } else {
+                    outputString = currentString;
+                }
+                $('#number_div').html(outputString);
+            }
+
+            function generateExpression(operator){
+                var existingNumber = $("#number_div").html();
+                var currentOperator = operator;
+                var expression = '';
+                var savedExpression = $('#savedExpression').val();
+                if(savedExpression=='' || savedExpression== null || savedExpression== undefined){
+                    expression = parseInt(existingNumber) + operator
+                } else {
+                    expression = savedExpression + existingNumber + operator;
+                }
+                $("#number_div").html("")
+                $("#expression").html(expression)
+                $("#savedExpression").val(expression)
+            }
+
+            function  evaluateExpression(){
+                var result = '';
+                var expression = $("#savedExpression").val();
+                var existingNumber = $("#number_div").html();
+                if(existingNumber != '' || existingNumber != null || existingNumber != undefined){
+                    expression = expression + parseInt(existingNumber);
+                    $('expression').html(expression)
+                }
+                result = eval(expression);
+                $("#savedExpression").val("")
+                $("#number_div").html(result)
+                $("#value_div").html(result)
+            }
+
+            function clearCalc(){
+                $("#savedExpression").val("")
+                $("#number_div").html("")
+                $("#value_div").html("")
+                $('expression').html("")
+            }
+                    
+        </script>
+    </body>
+</html>
