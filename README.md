@@ -3,6 +3,7 @@
 ![Hacktoberfest Logo](./assets/hacktoberfest_wall.png)
 
 # Table of content
+
 1. [Introduction](#introduction)
 1. [Guidelines](#guidelines)
 1. [What is Hacktoberfest?](#what-is-hacktoberfest)
@@ -25,9 +26,10 @@
 1. [Project Contributors ⭐](#project-contributors-⭐)
 
 ## Introduction
+
 ## Guidelines:
 
-- **No DELETING files** 
+- **No DELETING files**
 - Your code doesn't have to be pretty
 - You have the freedom to use any programming language.
 - If there is no folder for the Programming Language YOU are using, please create a folder inside the **"HacktoberFest"** directory with the name of the language.
@@ -174,8 +176,8 @@ If you have questions or need help, you can join our Slack team: [Join Slack Tea
 
 Now, let's get you started with contributing to other projects. We've compiled a list of projects with easy issues for newcomers. Check it out [here](https://firstcontributions.github.io/#project-list).
 
-
 ## Merge Policy:
+
 I will merge all pull requests as quickly as possible, as long as they meet the project's requirements and guidelines and are Legit.
 <br>
 Happy coding!
@@ -194,7 +196,6 @@ docker run -d -p 80:80 my-nginx-hacktoberfest
 
 ![Alt text](image.png)
 
-
 ## Project Admin 😎:
 
 <table>
@@ -204,6 +205,7 @@ docker run -d -p 80:80 my-nginx-hacktoberfest
 </table>
 
 ## Project Contributors ⭐:
+
 <table align="center">
 <tr>
 <td>
@@ -211,8 +213,8 @@ docker run -d -p 80:80 my-nginx-hacktoberfest
   <img src="https://contrib.rocks/image?repo=Midway91/HactoberFest2023" /> 
 </a>
 
+---
 
-***
 <h2 align="center">
     <p>
         Thank You
