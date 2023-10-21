@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
       int luckyNum = 7;
       int guess;
       int guessCount = 0;

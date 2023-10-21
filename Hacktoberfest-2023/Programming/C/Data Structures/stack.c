@@ -5,7 +5,7 @@ int stack[length];
 int tos =-1;
 
 void push(int x){
-	if(!isFull()){
+	if(!isFull()) {
 		stack[++tos] = x;
 	}
 }

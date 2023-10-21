@@ -1,5 +1,12 @@
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
 h1{
-    background-color: palegoldenrod;
     border: 1 px solid black;
     display: inline;
 
@@ -17,11 +24,29 @@ h2{
     display: block;
 }
 button{
-    background-color: darkgoldenrod;
-    font-style: italic;
+    background-color: royalblue;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+
     
 }
 button:hover{
-    background-color: gold;
+    background-color: green;
+}
+
+.Race{
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    
+.name{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+    
 }
