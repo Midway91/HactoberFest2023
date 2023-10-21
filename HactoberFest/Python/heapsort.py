@@ -1,7 +1,7 @@
 # Python program for implementation of heap Sort
 
 # To heapify subtree rooted at index i.
-# n is size of heap
+# n is size of heap sort
 
 
 def heapify(arr, N, i):
