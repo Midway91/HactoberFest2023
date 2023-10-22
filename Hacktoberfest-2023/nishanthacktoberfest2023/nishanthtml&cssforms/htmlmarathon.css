@@ -41,6 +41,7 @@ button:hover{
     display: inline-block;
     flex-direction: row;
     flex-wrap: wrap;
+}
 
     
 .name{
