@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Admin/OneDrive/Desktop/HactoberFestt2023",
-      "program": "c:/Users/Admin/OneDrive/Desktop/HactoberFestt2023/build/Debug/outDebug",
+      "cwd": "c:/Users/Vivek Kumar Tiwari/Desktop/open/HactoberFest2023",
+      "program": "c:/Users/Vivek Kumar Tiwari/Desktop/open/HactoberFest2023/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
