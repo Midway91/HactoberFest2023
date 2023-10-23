@@ -1,0 +1,27 @@
+//print all subset of arrays 
+class Solution {
+public:vector<vector<int>>ans;
+
+void helper(vector<int>nums,int index,vector<int>temp){
+    if(index==nums.size()-1){
+        ans.push_back(temp);
+        temp.push_back(nums[index]);
+        ans.push_back(temp);
+        return;
+    }
+    else{
+        helper(nums,index+1,temp);
+        temp.push_back(nums[index]);
+        helper(nums,index+1,temp);
+        return;
+    }
+    
+}
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<int>temp;
+        
+        helper(nums,0,temp);
+        return ans;
+        
+    }
+};
