@@ -8,10 +8,6 @@ Clone this repo and perform certain tasks like :
 - Making some changes in any code
 - Try to add more section to the existing repo
 
-```
-
-```
-
 `then, start the live server on your vs code.`
 
 Welcome to an incredible platform,an open-source project with a simple yet powerful goal,Share your innovative ideas with everyone. 😃
