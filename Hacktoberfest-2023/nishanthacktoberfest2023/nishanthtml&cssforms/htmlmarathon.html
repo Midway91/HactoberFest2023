@@ -7,44 +7,61 @@
     <link rel="stylesheet" href="htmlmarathon.css">
 </head>
 <body>
-    <h1>Race Registration</h1>
+
+<div class="container">   
+    <img class="race_bg" src="Assests/race.jpg" alt="bg_race">
+
+<div class="full_screen">
+    <center><h1>Race Registration</h1></center>
     <br>
         <forms action="/dummy">
-            <label for ="firstname"><b>First Name</b></label> 
-            <input id ="firstname" type="text" name="firstname" required>
-    
 
-    <label for ="lastname"></label><b>Last Name</b></label>
-    <input type ="text" id ="lastname" required>
+    <div class="names">
+        <label for ="firstname"><b>First Name</b></label> &nbsp;&nbsp;
+        <input id ="firstname" type="text" name="firstname" required>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <label for ="lastname"></label><b>Last Name</b></label> &nbsp;&nbsp;
+         <input type ="text" id ="lastname" required>
+    </div>
+
     <p>
-    <label for="Select a Race"><b>Select a Race</b></label>
+    <center><label for="Select a Race"><b><h3>Select a Race</h3></b></label></center>
     </p>
-    
+
+<div class="Race">
     <label for ="funrun5k"><b>Fun Run 5k</b></label>
     <input type="radio" id="funrun5k" name="Select a Race"required>
+    
     <br>
     <label for ="halfmarathon"><b>Half Marathon</b></label>
     <input type="radio" id="halfmarathon"name="Select a Race" required >
     <br>
     <label for ="fullmarathon"><b>Full Marathon</b> </label>
     <input type="radio" id="fullmarathon"name="Select a Race" required>
+    
+    
+</div>
     <br>
     
     <br>
+<div class="cred">
     <label for ="email"><b>Email</b></label>
     <input type="email" id ="email">
     <label for ="password"><b>Password</b></label>
     <input type="password" id ="password">
-    <br>
-    
-        <label for="selectagegroup">Select Age Group</label>
+</div>
+        <br><br>
+       <center><b><label for="selectagegroup">Select Age Group</b></label>
         <select name="selectagegroup" id="selectagegroup">
-        <option value=" "><b>under 18</b></option>
+        <option value=" "><b>under 18</b></option> </center>
+        <option value=" "><b>above 18</b></option> </center>
+        <option value=" "><b>senior citizen</b></option> </center>
     </select>
     <br><br>
     
     <center><button class="Btn">Register!</button></center>
         </forms>
-
+</div>
+</div>
 </body>
 </html>

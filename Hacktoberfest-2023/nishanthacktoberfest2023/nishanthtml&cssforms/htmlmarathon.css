@@ -1,51 +1,112 @@
 body{
+    margin: 0;
+    padding: 0;
+}
+
+.full_screen{
     display: grid;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 10px;
+    right: 50px;
+    top: 30px;
 
+}
+
+.container{
+    position: relative;
+    text-align: center;
+}
+
+.race_bg{
+    width: 110%;
+    position: relative;
+    height: 110%;
 }
 
 
 h1{
     border: 1 px solid black;
     display: inline;
+    color: red;
 
 }
-input{
-    background-color: paleturquoise;
-    border: 1px solid black;
-    display: block;
-}
+
+
 
 h2{
     background-color: aqua;
     border:40px ;
     border-radius: 50%;
-    display: block;
 }
+
 button{
     background-color: royalblue;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 100px;
     height: 30px;
-
     
 }
+
 button:hover{
     background-color: green;
 }
 
 .Race{
-    display: inline-block;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
 }
 
     
-.name{
+.names{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
 
+}
+
+#firstname{
+    background-color: white;
+    border-radius: 10px;
+}
+
+#lastname{
+    background-color: white;
+    border-radius: 10px;
+}
+
+#firstname:hover{
+    background-color: aqua;
+}
+
+#lastname:hover{
+    background-color: aqua;
+}
+
+.cred{
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+}
+
+#email{
+    border-radius: 10px;
+}
+
+#password{
+    border-radius: 10px;
+}
+
+option{
+    border-radius: 10px;
+}
+
+option:hover{
+    background-color: blue;
+}
+
+#selectagegroup{
+    border-radius: 10px;
 }
