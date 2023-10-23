@@ -5,11 +5,11 @@ This is for HacktoberFest2023
 Clone this repo and perform certain tasks like :
 
 - Highlighting any issues
-- Making some changes in css
-- Try to add more section to it
+- Making some changes in any code
+- Try to add more section to the existing repo
 
 ```
-git clone https://github.com/CareerDevelopmentHub/Environ-Workshop-1
+
 ```
 
 `then, start the live server on your vs code.`
