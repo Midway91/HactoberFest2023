@@ -1,0 +1,105 @@
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login and Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container login">
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="return validateLogin()">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form-container register">
+            <h2>Register</h2>
+            <form id="register-form" onsubmit="return validateRegister()">
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+//style.css
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #0074cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+//script.js
+
+function validateLogin() {
+    const username = document.getElementById("login-username").value;
+    const password = document.getElementById("login-password").value;
+
+    if (username === "" || password === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    // Perform additional validation here (e.g., checking username and password against a database)
+
+    return true;
+}
+
+function validateRegister() {
+    const username = document.getElementById("register-username").value;
+    const password = document.getElementById("register-password").value;
+
+    if (username === "" || password === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    // Perform additional validation here (e.g., checking if the username is available)
+
+    return true;
+}
+
