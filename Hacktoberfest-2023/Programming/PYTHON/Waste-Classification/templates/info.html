@@ -1,0 +1,37 @@
+    {% extends "index.html" %}
+    {% block HomeContent %}
+    <div class="container" style="margin-top: 80px;">
+        <h1 class="text-center" style="color:black;">Tech Stack</h1>
+        <p class="container-fluid "style="font-size: 20px; font-weight:bold; color:black;"><br>Our project, Crapguru, utilizes a number of powerful
+            technologies to achieve our goals of creating awareness and educating the masses about responsible
+            consumption
+            and production, as well as climate action.
+
+            One key aspect of our project is our use of Google Cloud Platform (GCP) to power our app and API endpoint.
+            We use Cloud Run to host our app, which allows us to easily deploy and scale our application to meet the needs
+            of
+            our users. Additionally, we use Cloud Functions to create an API endpoint, which enables us to interact with
+            our
+            app and data in a flexible and cost-effective manner.
+
+            We also rely on Cloud Storage to store our machine learning models and data, which allows us to easily
+            access
+            and manipulate these resources as needed. And for storing our Docker images, we use the Container Registry,
+            which enables us to manage and deploy our containerized applications with ease.
+
+            In terms of software and frameworks, we use Python as our primary programming language, and TensorFlow as
+            our
+            machine learning library. We also utilize MobileNet, a pre-trained deep learning model, to classify and
+            segregate different types of waste. Finally, we use Flask to build our app and API endpoint, which provides
+            a
+            lightweight and easy-to-use web framework.
+
+            Altogether, these technologies and frameworks enable us to create a powerful and efficient platform for
+            addressing two of the UN's Sustainable Development Goals.
+        </p>
+        <div class="container-fluid">
+            <h1 class="text-center" style="color:black;">Flow Diagram</h1>
+            <img src="../static/img/flow.jpeg" alt="">
+        </div>
+    </div>
+    {% endblock %}
