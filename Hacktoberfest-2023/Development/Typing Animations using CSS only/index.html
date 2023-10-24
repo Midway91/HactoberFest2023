@@ -1,0 +1,372 @@
+<!-- 
+    This Animation Code is made ANURAG VISHWAKAMRA
+    GitHub: https://github.com/vishanurag/
+    Portfolio: https://vishanurag.github.io/
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');        *{
+            margin: 0;
+        }
+        .cointainer{
+            margin: 0px;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(179, 181, 181);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pointer{
+            background-color: #000;
+            height: 1.5em;
+            width: 3px;
+            left: -12px;
+            position: absolute;
+            animation-name: typer;
+            animation-duration: 14s;
+            animation-fill-mode: forwards;
+        }
+        .name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+            position: relative;
+            font-family: 'Nunito', sans-serif;
+        }
+        .revel{
+            position: absolute;
+            right: 0px;
+            background-color: rgb(179, 181, 181);
+            height: 1.5em;
+            border-left: 5px solid #000;
+            /* animation-name: displayName; */
+            /* animation-duration: 4s; */
+            /* animation-fill-mode: forwards; */
+            width: 400px;
+            animation: typer infinite 0.5s forwards, displayName 15s forwards infinite;
+        }
+        
+        @keyframes typer{
+            from{
+                border-left: 5px solid #000;
+            }
+            to{
+                border-left: 4px solid rgb(179, 181, 181);
+            }
+        }
+        @keyframes displayName {
+            0%{
+                /* border-left: 5px solid grey; */
+            }
+            50%{
+                width: 0px;
+                right: -10px;
+                /* right: -100px; */
+            }
+            
+        }
+        
+        .secondContainer{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(53, 56, 57);
+        }
+
+        @media only screen and (max-width: 500px) {
+            .name{
+                font-size: 1.5em;
+
+            }
+            .revel{
+                width: 300px;
+            }
+        }
+        </style>
+</head>
+<body>
+    <div class="cointainer">
+        <h1 class="name">
+            <!-- <div class="pointer"></div> -->
+            <div class="revel"></div>
+            I am Anurag Vishwakarma
+        </h1>
+    </div>
+    
+    <style>
+        .secondContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        .animateText{
+            position: relative;
+            font-size: 1.8em;
+        }
+        
+        .hideTape{
+            background-color: rgb(53, 56, 57);
+            height: 40px;
+            width: 300px;
+            position: absolute;
+            top: 35px;
+            left: 280px;
+            border-left: 5px solid #000;
+            animation: blinkingBar 0.3s forwards infinite;
+        }
+        .name2{
+            font-family: 'Nunito', sans-serif;
+            width: max-content;
+            position: absolute;
+            color: azure;
+            left: 300px;
+            animation: nameVisible 10s forwards infinite;
+        }
+
+        @keyframes nameVisible{
+            0%{
+                left: 300px;
+            }
+            50%{
+                left: 0px;
+            }
+            100%{
+                left: 300px;
+            }
+        }
+        @keyframes blinkingBar{
+            from{
+                border-left: 5px solid #000;
+                
+            }
+            to{
+                
+                border-left: 5px solid rgb(53, 56, 57);
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+
+            .secondContainer{
+                align-items: flex-start;
+            }
+            .box{
+                margin-left: 50px;
+            }
+        }
+    </style>
+
+    <div class="secondContainer">
+        
+        <div class="box">
+            <div class="hello">Hello! </div>
+            <div class="animateText">
+    
+                <div class="iAmText">
+                    I am 
+                </div>
+                <div class="name2">
+                    Anurag Vishwakarma
+                </div>
+                <div class="hideTape"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .container3{
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(161, 201, 236);
+            display: grid;
+            place-content: center;
+            align-items: center;
+            row-gap: 50px;
+            text-align: center;
+        }
+        .helloBoxAnother{
+            position: absolute;
+            justify-self: center;
+        }
+        .myName{
+            /* position: absolute; */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2em;
+            margin-top: 300px;
+            opacity: 0;
+            animation: riseUp 2s forwards infinite;
+        }
+
+        @keyframes riseUp{
+            to{
+                margin-top: 100px;
+                opacity: 1;
+            }
+        }
+    </style>
+    <div class="container3">
+        <div class="helloBoxAnother">Hello! I am</div>
+        <div class="myName">
+            Anurag Vishwakarma
+        </div>
+    </div>
+    <!-- Section Ends -->
+
+
+
+    <!-- Division -->
+    <!-- Another Section Starts -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        .anotherContainer3{
+            background-color: rgb(195, 219, 239);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: hidden;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        .mainAnimationContentBox{
+            padding-left: 50px;
+        }
+        .heyBox{
+            /* position: fixed; */
+            color: #686363;
+        }
+        .animationTextsBox{
+            font-family: 'Lobster', cursive;
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-size: 2em;
+            margin-top: 20px;
+            margin-top: 50px;
+            
+        }
+        .typingBox3{
+            position: absolute;
+            background-color: rgb(195, 219, 239);
+            height: 50px;
+            width: 800px;
+            animation: hideAndShowTypingBox3 10s forwards infinite, typingBar3 0.2s forwards infinite;
+        }
+        .myName3{
+            color: rgb(35, 3, 240);
+            /* visibility: hidden; */
+            width: max-content;
+            animation: nameVisible3 20s 10s forwards infinite;
+        }
+        .myOccupation3{
+            color: #64396d;
+            width: max-content;
+            padding-left: 20px ;
+            /* visibility: hidden; */
+            animation: occupationVisible3 20s 5s forwards infinite;
+        }
+        @keyframes nameVisible3 {
+           0%{
+                position: absolute;
+                left: 0px;
+            }
+            20%{
+                position: absolute;
+                left: 300px;
+                /* opacity: 0; */
+            }
+            30%{
+                position: absolute;
+                left: 300px;
+                /* opacity: 0; */
+            }
+            90%{
+                color: rgb(35, 3, 240);
+                position: absolute;
+                left: 0px;
+            }
+            100%{
+                color: purple;
+                position: absolute;
+                left: 0px;
+            }
+            
+        }
+        @keyframes occupationVisible3 {
+            0%{
+                position: absolute;
+                left: 300px;
+                color: rgb(231, 23, 23);
+                /* opacity: 0; */
+           }
+            30%{
+                position: absolute;
+                left: 0px;
+            }
+            60%{
+                position: absolute;
+                left: 0px;
+            }
+            90%{
+                position: absolute;
+                /* opacity: 300px; */
+                left: 300px;
+            }
+            100%{
+                position: absolute;
+                /* opacity: 0; */
+                left: 300px;
+            }
+        }
+
+        @keyframes typingBar3 {
+            to{
+                border-left: 4px solid #000;
+            }
+        }
+
+        @keyframes hideAndShowTypingBox3 {
+            0%{
+                left: 0px;
+            }
+            50% {
+                left: 301px;
+
+            }
+            100%{
+                left: 0px;
+            }
+        }
+    </style>
+
+    <div class="anotherContainer3">
+        <main class="mainAnimationContentBox">
+            <div class="heyBox">
+                Hey!
+            </div>
+            <div class="mainAnimationBox3">
+                <div class="iAmBox3">I'm</div>
+                <div class="animationTextsBox">
+                    <div class="myName3">Anurag Vishwakarma</div>
+                    <div class="myOccupation3">Full Stack Developer</div>
+
+                    <div class="typingBox3"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
