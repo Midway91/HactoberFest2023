@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Crap Guru</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/index_.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/Navigation-with-Button.css">
+    <link rel="icon" type="image" sizes="32x32" href="../static/img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+        .result-cont {
+            position: relative;
+        }
+
+        .result-cont .after {
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 50%;
+            height: 100%;
+            display: block;
+            visibility: hidden;
+            color: #FFF;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        #processing {
+            text-transform: uppercase;
+            background: radial-gradient(circle at 10% 20%, rgb(0, 93, 133) 0%, rgb(0, 181, 149) 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Be Vietnam Pro";
+            font-size: 4vw;
+
+        }
+
+        .rotate {
+            animation: rotation 3s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+
+    <header class="text-center text-white pt-5"
+        style="background: url(&quot;../static/img/waste1.jpg&quot;);background-size: contain;">
+        <!-- <div class="overlay"> -->
+        <nav class="navbar navbar-light navbar-expand-md bg-white border rounded-0 navigation-clean-button fixed-top opacity-75"
+            style="background: var(--bs-white);filter: brightness(86%) contrast(200%);">
+            <div class="container-fluid"><a class="navbar-brand" href="#">Crap Guru</a><button data-bs-toggle="collapse"
+                    class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle
+                        navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/info#home">Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- </div> -->
+        <div class="container-fluid " id="home" style="background: rgb(0,0,0,0.4);">
+            <div class="row">
+                <div class="container col-xl-9 mx-auto mt-4 position-relative">
+                    <h1 class="mb-1"><br>Crap Guru ♻️</h1>
+                    <h3 class="mb-5"><br>A Sustainable AI solution for <br>Efficient Waste Segregation <br> &nbsp;<br>
+                    </h3>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
+                    <form method="post" enctype="multipart/form-data" id="upload-file">
+                        <div class="row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input class="form-control" type="file" id="myFile" name="filename" accept="image/*"
+                                    required>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button id="submission" class="btn btn-primary btn-lg" type="submit">Upload</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="Result-block">
+                    <div class="container-fluid my-2 result-cont">
+                        <img id="display-img" src="" alt="" class="img-thumbnail "
+                            style="width: 50%; visibility: hidden; object-fit: contain;">
+                        <div class="after container img-thumbnail" id="after">
+                            <img src="../static/img/recycle-symbol.png" class="rotate"
+                                style="position: relative; top: 50%;  height:20%; width:20%; object-fit: contain;">
+                            <h3 id="processing">Processing</h3>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center py-1 mb-5" style="margin-top: 20px;">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="" id="predictionCt" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block HomeContent %}
+    {% endblock %}
+    <footer class="bg-light footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© Crap Guru 2022. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
