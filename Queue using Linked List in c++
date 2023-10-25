@@ -1,0 +1,145 @@
+#include<iostream>
+using namespace std;
+class Node
+{
+	public:
+		int data;
+		Node* next;
+		
+	Node(int d)
+	{
+		data = d;
+		next = NULL;
+	}
+		
+};
+class Queue
+{
+	public:
+	Node* front;
+	Node*rear;
+	
+	Queue()
+	{
+		front = NULL;
+		rear = NULL;
+	}
+	
+	bool isEmpty()
+	{
+		if((front==NULL) && (rear==NULL))
+		{
+			return true;
+		}
+		else
+		return false;
+	}
+	
+	void Enqueue(Node* n)
+	{
+		if(isEmpty())
+		{
+			front = n;
+			rear = n;
+			cout<<"Enqueued Successfully"<<endl;
+		}
+		else
+		{
+			rear->next = n;
+			rear = n;
+			cout<<"Node Enqueued succesfully"<<endl;
+		}
+	
+	}
+	
+	Node* Dequeue()
+	{
+		Node* temp = NULL;
+		if(isEmpty())
+		{
+			cout<<"Queue is empty"<<endl;
+			return NULL;
+		}
+		
+		else
+		{
+			
+		
+			if(front==rear)
+			{
+				temp = front;
+				front=NULL;
+				rear=NULL;
+				return temp; 
+			}
+			else
+			{
+				temp = front;
+				front=front->next;
+				return temp;
+			}
+		
+		}
+		
+	}
+	
+	int CountNoOfNodes()
+	{
+		int count=0;
+		Node* temp = front;
+		while(temp!=NULL)
+		{
+			count++;
+			temp = temp->next;
+		}
+		
+		return count;
+	}
+	
+	void display()
+	{
+		if(isEmpty())
+		{
+			cout<<"Queue is Empty"<<endl;
+			return;
+		}
+		
+		Node* temp = front;
+		while(temp!=NULL)
+		{
+			cout<<temp->data<<" ";
+			temp= temp->next;
+		}
+		
+		cout<<endl;
+	}
+
+	
+};
+
+int main()
+{
+	Node* n1 = new Node(4);
+	Node* n2 = new Node(5);
+	Node* n3 = new Node(6);
+	Node* n4 = new Node(7);
+	Node* n5 = new Node(8);
+
+	Queue q;
+	
+	q.Enqueue(n1);
+	q.Enqueue(n2);
+	q.Enqueue(n3);
+	q.Enqueue(n4);
+	q.Enqueue(n5);
+	q.display();
+	cout<<"\n\n AFTER DEQUEUED"<<endl<<endl;
+	q.Dequeue();
+	q.display();
+	cout<<"\n\nCount no of nodes"<<endl<<endl;
+cout<<q.CountNoOfNodes();
+	
+	
+	
+	
+}
