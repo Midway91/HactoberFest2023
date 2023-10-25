@@ -1,0 +1,107 @@
+import math
+
+class TicTacToe:
+    def __init__(self):
+        self.board = [' ' for _ in range(9)]
+
+    def print_board(self):
+        for i in range(0, 9, 3):
+            print('|'.join(self.board[i:i+3]))
+            if i < 6:
+                print('-----')
+
+    def available_moves(self):
+        return [i for i, spot in enumerate(self.board) if spot == ' ']
+
+    def make_move(self, position, letter):
+        self.board[position] = letter
+
+    def check_winner(self, board, letter):
+        winning_combinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+                                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                                [0, 4, 8], [2, 4, 6]]
+        for combo in winning_combinations:
+            if all(board[i] == letter for i in combo):
+                return True
+        return False
+
+    def check_draw(self):
+        return ' ' not in self.board
+
+    def minimax(self, board, maximizing_player):
+        available_spots = self.available_moves()
+        if self.check_winner(board, 'X'):
+            return -1
+        elif self.check_winner(board, 'O'):
+            return 1
+        elif self.check_draw():
+            return 0
+
+        if maximizing_player:
+            max_eval = -math.inf
+            for move in available_spots:
+                board[move] = 'O'
+                evaluation = self.minimax(board, False)
+                board[move] = ' '
+                max_eval = max(max_eval, evaluation)
+            return max_eval
+        else:
+            min_eval = math.inf
+            for move in available_spots:
+                board[move] = 'X'
+                evaluation = self.minimax(board, True)
+                board[move] = ' '
+                min_eval = min(min_eval, evaluation)
+            return min_eval
+
+    def get_best_move(self):
+        best_score = -math.inf
+        best_move = None
+        for move in self.available_moves():
+            self.board[move] = 'O'
+            score = self.minimax(self.board, False)
+            self.board[move] = ' '
+            if score > best_score:
+                best_score = score
+                best_move = move
+        return best_move
+
+    def play_game(self):
+        print("Welcome to Tic Tac Toe!")
+        self.print_board()
+
+        while True:
+            if self.check_winner(self.board, 'X'):
+                print("You win!")
+                break
+            if self.check_winner(self.board, 'O'):
+                print("AI wins!")
+                break
+            if self.check_draw():
+                print("It's a draw!")
+                break
+
+            user_move = int(input("Make your move (0-8): "))
+            while user_move not in self.available_moves():
+                user_move = int(input("Invalid move. Make your move (0-8): "))
+            self.make_move(user_move, 'X')
+            self.print_board()
+
+            if self.check_winner(self.board, 'X'):
+                print("You win!")
+                break
+            if self.check_winner(self.board, 'O'):
+                print("AI wins!")
+                break
+            if self.check_draw():
+                print("It's a draw!")
+                break
+
+            print("AI's turn...")
+            ai_move = self.get_best_move()
+            self.make_move(ai_move, 'O')
+            self.print_board()
+
+if __name__ == '__main__':
+    game = TicTacToe()
+    game.play_game()
