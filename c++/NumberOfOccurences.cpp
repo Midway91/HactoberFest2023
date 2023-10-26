@@ -10,20 +10,26 @@ PROBLEM STATEMENT:
 #include<bits/stdc++.h>
 using namespace std;
 
+vector<int> numberOfOccurences(string s){
+    unordered_map<char,int> um;
+    vector<int> ans(s.size()-1);
+
+    for(int i=s.size()-2; i>=0; i--){
+        ans[i] = um[s[i+1]];
+        um[s[i]]++;
+    }
+   
+    return ans;
+}
+
 int main(){
     string s;
     cout<<"Enter an string";
     cin>>s;
+   
+    vector<int> ans = numberOfOccurences(s);
 
-    unordered_map<char,int> um;
-    vector<int> ans(s.size());
-
-    for(int i=s.size()-1; i>=0; i--){
-        ans[i] = um[s[i]];
-        um[s[i]]++;
-    }
-
-    for(int i=0; i<s.size(); i++)
+    for(int i=0; i<ans.size(); i++)
         cout<<ans[i]<<" ";
 
     return 0;
