@@ -1,0 +1,76 @@
+
+class Solution{
+    public:
+    
+    bool path(vector<vector<int>>m,vector<vector<int>>&visited,vector<string>&ans,string &curr,int n,int row,int col){
+        if(row==n-1 && col==n-1){
+            ans.push_back(curr);
+            return true;
+        }
+        else{
+            visited[row][col]=1;
+            if(row>0){
+                if(m[row-1][col]==1 && visited[row-1][col]==0){
+                    curr+="U";
+                    bool res=path(m,visited,ans,curr,n,row-1,col);
+               
+                     curr = curr.substr(0, curr.length() - 1);
+                    
+                    
+                    
+                }
+            }
+            if(col>0){
+                if(m[row][col-1]==1 && visited[row][col-1]==0){
+                         curr+="L";
+                    bool res=path(m,visited,ans,curr,n,row,col-1);
+                   
+                     curr = curr.substr(0, curr.length() - 1);
+                    
+                    
+                    
+                }
+                
+            }
+            if(row<n-1){
+                if(m[row+1][col]==1 && visited[row+1][col]==0){
+                         curr+="D";
+                    
+                    bool res=path(m,visited,ans,curr,n,row+1,col);
+                   
+                     curr = curr.substr(0, curr.length() - 1);
+                    
+                    
+                    
+                }
+            }
+            if(col<n-1){
+                if(m[row][col+1]==1 && visited[row][col+1]==0){
+                         curr+="R"; 
+                  
+                    bool res=path(m,visited,ans,curr,n,row,col+1);
+                     
+                    curr = curr.substr(0, curr.length() - 1);
+                    
+                    
+                    
+                }
+            }
+            visited[row][col]=0;
+            return false ;
+        }
+        
+    }
+    vector<string> findPath(vector<vector<int>> &m, int n) {
+        // Your code goes here
+        
+        vector<vector<int>>visited(n,vector<int>(n,0));
+        vector<string>ans;
+        string curr="";
+        if(m[0][0]==0){
+            return ans;
+        }
+        bool res=path(m,visited,ans,curr,n,0,0);
+        return ans;
+    }
+};

@@ -1,0 +1,53 @@
+class Solution {
+public:
+bool isSafe(int n,int r,int c,vector<int>upper_left_diag,vector<int>upper_right_diag,vector<int>upper_st){
+if(upper_left_diag[n-1-r+c]==1){
+    return false;
+}
+else if(upper_right_diag[r+c]==1){
+    return false;
+}
+else if(upper_st[c]==1){
+    return false;
+}
+return true;
+}
+
+void helper(int n,int row,vector<string>chess,vector<vector<string>>&ans,vector<int>upper_left_diag,vector<int>upper_right_diag,vector<int>upper_st){
+if(row==n){
+ans.push_back(chess);
+return;
+}
+else{
+    for(int i=0;i<n;i++){
+bool is_safe=isSafe(n,row,i,upper_left_diag,upper_right_diag,upper_st);
+if(is_safe){
+chess[row][i]='Q';
+upper_left_diag[n-1-row+i]=1;
+upper_right_diag[row+i]=1;
+upper_st[i]=1;
+helper(n,row+1,chess,ans,upper_left_diag,upper_right_diag,upper_st);
+chess[row][i]='.';
+upper_left_diag[n-1-row+i]=0;
+upper_right_diag[row+i]=0;
+upper_st[i]=0;
+}
+    }
+    return;
+}
+
+}
+    vector<vector<string>> solveNQueens(int n) {
+       vector<string>chess(n);
+string s(n,'.');
+for(int i=0;i<n;i++){
+    chess[i]=s;
+}
+vector<vector<string>>ans;
+vector<int>upper_left_diag(2*n,0);
+vector<int>upper_right_diag(2*n,0);
+vector<int>upper_st(n,0);
+helper(n,0,chess,ans,upper_left_diag,upper_right_diag,upper_st);
+return ans;
+    }
+};

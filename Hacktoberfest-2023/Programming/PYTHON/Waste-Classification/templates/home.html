@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% block HomeContent %}
+
+<section class="text-center bg-light features-icons">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                    <div class="text-center d-flex features-icons-icon"><img src="../static/img/cloud_run.png"
+                            style="margin-left: 32.5%;"></div>
+                    <h3>Cloud Run</h3>
+                    <p class="lead mb-0">To Build and deploy scalable containerized apps written in any language on
+                        a fully managed platform.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                    <div class="d-flex features-icons-icon"><img style="margin-left: 32.5%;"
+                            src="../static/img/cloud_storage.png"></div>
+                    <h3>Cloud Storage</h3>
+                    <p class="lead mb-0">A Cloud-based storage service for businesses, all running on Google Cloud’s
+                        infrastructure.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                    <div class="d-flex features-icons-icon"><img src="../static/img/cloud_func.png"
+                            style="margin-left: 32.5%;"></div>
+                    <h3>Cloud Functions</h3>
+                    <p class="lead mb-0">A Fully-managed serverless execution environment for building and
+                        connecting cloud services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="showcase" id="about">
+    <div class="container-fluid py-4 text-center">
+        <h1>About</h1>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="row g-0 pt-4">
+            <div class="col-lg-6 text-white order-lg-2 showcase-img"
+                style="background-image:url(&quot;../static/img/garbage.jpeg&quot;); background-size: contain; background-repeat: no-repeat;">
+                <span></span>
+            </div>
+            <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                <h2>The Problem</h2>
+                <p class="lead">India generates approximately 62 million tonnes of waste per year, with only 12
+                    million tonnes being treated. Because of the lack of waste segregation, the percentage of waste
+                    that is treated is extremely low. </p>
+                <p class="lead">Waste segregation is crucial to prevent health problems that can result from
+                    improperly disposed of waste and contaminants, as well as to lessen the impact that it has on
+                    the environment.</p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 text-white showcase-img justify-content-center"
+                style="background-image:url(&quot;../static/img/UN_sustainable_goals.png&quot;); background-size: contain; background-repeat: no-repeat;">
+                <span></span>
+            </div>
+            <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                <h2>Our Solution</h2>
+                <p class="lead"><strong>Crap Guru</strong> attempts to solve this problem by attacking it at its
+                    source. It aims to bring waste-segregation to every household via the internet, raise public
+                    awareness, and increase the threshold of waste that is treated.</p>
+                <p class="lead"><strong>Crap Guru</strong>, is dedicated to addressing two of the UN's Sustainable
+                    Development Goals: <strong>Goal 12 (Responsible Consumption and Production)</strong> and
+                    <strong>Goal 13 (Climate Action) </strong>. Through our platform, we aim to create awareness and
+                    educate the masses about the importance of responsible consumption and production, as well as
+                    the urgent need for action on climate change.
+                </p>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-6 text-white order-lg-2 showcase-img"
+                style="background-image:url(&quot;../static/img/segregated.jpg&quot;);background-size: contain; background-repeat: no-repeat;">
+                <span></span>
+            </div>
+            <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                <h2></h2>
+                <p class="lead mb-0">Our use of <strong>Machine Learning</strong> to assist in the separation of
+                    various
+                    waste types is one distinctive feature of our project. We can accurately categorise and
+                    segregate different forms of waste by training our algorithms on big data sets of waste samples,
+                    making it simpler for people and communities to recycle and dispose of their waste responsibly.
+                </p>
+                <p class="lead mb-0">This procedure not only reduces the quantity of waste that is dumped in
+                    landfills, but it also makes it simpler to recycle and reuse items, conserving resources and
+                    lowering our environmental impact. <strong>Crap Guru</strong> is utilising cutting-edge
+                    technology to build a more sustainable future for everyone.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+class Solution {
+public:
+    
+        
+void helper(vector<int>candidates,vector<int>temp,vector<vector<int>>&ans,int index){
+   
+    if(index==candidates.size()){
+     
+        return;
+    }
+    else{
+        for(int i=index;i<candidates.size();i++){
+   
+            if(i>index && candidates[i]==candidates[i-1]){
+                continue;
+            }
+           
+            
+            temp.push_back(candidates[i]);
+            ans.push_back(temp);
+            helper(candidates,temp,ans,i+1);
+  
+            temp.pop_back();    
+                }
+                return;
+    }
+
+}
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+           vector<vector<int>>ans;
+        vector<int>temp;
+        ans.push_back(temp);
+
+        helper(nums,temp,ans,0);
+       
+        return ans;
+    }
+    
+};
