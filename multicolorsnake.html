@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      canvas {
+        border: 2px solid #000;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <script>
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+      const blockSize = 10;
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+      const snake = [{ x: 10, y: 10 }];
+      let dx = blockSize;
+      let dy = 0;
+      let foodX, foodY;
+      let score = 0;
+
+      function drawSnake() {
+        snake.forEach((segment) => {
+          ctx.fillStyle = "green"; // Change the color here
+          ctx.fillRect(segment.x, segment.y, blockSize, blockSize);
+        });
+      }
+
+      function drawFood() {
+        ctx.fillStyle = "red"; // Change the color here
+        ctx.fillRect(foodX, foodY, blockSize, blockSize);
+      }
+
+      function moveSnake() {
+        const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+        snake.unshift(head);
+        if (head.x === foodX && head.y === foodY) {
+          score += 10;
+          generateFood();
+        } else {
+          snake.pop();
+        }
+      }
+
+      function generateFood() {
+        const maxX = canvasWidth / blockSize;
+        const maxY = canvasHeight / blockSize;
+        foodX = Math.floor(Math.random() * maxX) * blockSize;
+        foodY = Math.floor(Math.random() * maxY) * blockSize;
+      }
+
+      function collisionDetection() {
+        if (
+          snake[0].x < 0 ||
+          snake[0].x >= canvasWidth ||
+          snake[0].y < 0 ||
+          snake[0].y >= canvasHeight
+        ) {
+          clearInterval(gameInterval);
+          alert("Game Over! Your score: " + score);
+        }
+        for (let i = 1; i < snake.length; i++) {
+          if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+            clearInterval(gameInterval);
+            alert("Game Over! Your score: " + score);
+          }
+        }
+      }
+
+      function drawGame() {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        drawFood();
+        drawSnake();
+        moveSnake();
+        collisionDetection();
+      }
+
+      function keyDownHandler(event) {
+        switch (event.key) {
+          case "ArrowUp":
+            if (dy !== blockSize) {
+              dx = 0;
+              dy = -blockSize;
+            }
+            break;
+          case "ArrowDown":
+            if (dy !== -blockSize) {
+              dx = 0;
+              dy = blockSize;
+            }
+            break;
+          case "ArrowLeft":
+            if (dx !== blockSize) {
+              dx = -blockSize;
+              dy = 0;
+            }
+            break;
+          case "ArrowRight":
+            if (dx !== -blockSize) {
+              dx = blockSize;
+              dy = 0;
+            }
+            break;
+        }
+      }
+
+      document.addEventListener("keydown", keyDownHandler);
+      generateFood();
+      const gameInterval = setInterval(drawGame, 100);
+    </script>
+  </body>
+</html>
