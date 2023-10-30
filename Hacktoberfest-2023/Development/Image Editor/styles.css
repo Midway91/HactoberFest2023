@@ -1,0 +1,68 @@
+*{
+    padding: 20px 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #editor {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #imageContainer {
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  #uploadedImage {
+    max-width: 50%;
+    max-height: 50%;
+    border: 2px solid #0073e6;
+    border-radius: 5px;
+  }
+  
+  #customText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #customTextInput {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #generatePDF, #downloadImage {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #generatePDF:hover, #downloadImage:hover {
+    background-color: #005bb7;
+  }
+  

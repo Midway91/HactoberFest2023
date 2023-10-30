@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image to PDF Editor</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <input type="file" id="imageInput" accept="image/*">
+  <input type="text" id="customTextInput" placeholder="Enter custom text">
+  <div id="editor">
+    <div id="imageContainer">
+      <img id="uploadedImage" src="" alt="Uploaded Image">
+      <div id="customText"></div>
+    </div>
+    <button id="generatePDF">Generate PDF</button>
+    <!-- <button id="downloadImage">Download Image</button> -->
+  </div>
+
+  <script src="pdf.js"></script>
+  <script src="html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
