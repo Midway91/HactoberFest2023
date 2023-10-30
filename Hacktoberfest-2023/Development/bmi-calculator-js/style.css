@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+ :root {
+    --light: #fff;
+    --dark: rgba(0, 0, 0, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+}
+
+#container {
+    transition: 2s;
+    color: var(--dark);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light);
+    /* height: 40rem; */
+    width: 80%;
+    max-width: 40rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 1rem 1rem 10rem 2rem rgb(0 0 0 / 0.25);
+    padding: 2.5rem;
+}
+
+.heading {
+    margin: 3rem 0;
+}
+
+.content {
+    color: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 3rem;
+}
+
+.select-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+input,
+select,
+option {
+    width: 80%;
+    color: var(--dark);
+    padding: 0.5rem 0;
+    background-color: inherit;
+}
+
+#submit {
+    color: var(--light);
+    font-weight: 600;
+    margin: 3rem 0;
+    padding: 1rem 0;
+    width: 100%;
+    background-color: blueviolet;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#submit:hover {
+    background-color: rgb(98, 11, 180);
+    height: 3rem;
+}
+

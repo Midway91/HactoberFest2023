@@ -1,0 +1,52 @@
+int mazeObstacles(int n, int m, vector< vector< int> > &mat) {
+    // Write your code here
+    int modulo = 1000000007;
+    if(mat[n-1][m-1]==-1){
+        return 0;
+    }
+    vector<vector<int>>dp(n,vector<int>(m,10));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(mat[i][j]==-1){
+                dp[i][j]=0;
+            }
+        }
+    }
+    int fill=1;
+    for(int i=m-1;i>=0;i--){
+        if(mat[n-1][i]==-1){
+            fill=0;
+        }
+        dp[n-1][i]=fill;
+    }
+    fill=1;
+    for(int i=n-1;i>=0;i--){
+        if(mat[i][m-1]==-1){
+            fill=0;
+        }
+        dp[i][m-1]=fill;
+    }
+
+    
+for(int i=n-2;i>=0;i--){
+	for(int j=m-2;j>=0;j--){
+            if (mat[i][j] != -1) {
+                if (dp[i + 1][j] != 0 && dp[i][j + 1] != 0) {
+                  dp[i][j] = (dp[i + 1][j] + dp[i][j + 1])%modulo;
+                }
+                else if(dp[i + 1][j] != 0){
+                    dp[i][j]=dp[i+1][j];
+                }
+                else if(dp[i][j + 1]!=0){
+dp[i][j]=dp[i][j+1];
+                }
+                else{
+                    dp[i][j]=0;
+                }
+            }
+        }
+}
+ 
+return dp[0][0];
+    
+}

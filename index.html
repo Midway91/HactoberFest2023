@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Fall Game</title>
+    <style>
+      body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #000;
+}
+
+.paddle {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 10px;
+    background-color: #3498db;
+}
+
+.ball {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="paddle"></div>
+        <div class="ball"></div>
+    </div>
+    <script>
+      const ball = document.querySelector('.ball');
+const paddle = document.querySelector('.paddle');
+const gameContainer = document.querySelector('.game-container');
+
+let isGameOver = false;
+
+function movePaddle(event) {
+    const x = event.clientX - gameContainer.offsetLeft;
+    const paddleX = x - paddle.clientWidth / 2;
+
+    if (paddleX >= 0 && paddleX <= gameContainer.clientWidth - paddle.clientWidth) {
+        paddle.style.left = paddleX + 'px';
+    }
+}
+
+function checkCollision() {
+    const ballRect = ball.getBoundingClientRect();
+    const paddleRect = paddle.getBoundingClientRect();
+
+    if (
+        ballRect.bottom >= paddleRect.top &&
+        ballRect.bottom <= paddleRect.bottom &&
+        ballRect.left >= paddleRect.left &&
+        ballRect.right <= paddleRect.right
+    ) {
+        gameOver();
+    }
+}
+
+function gameOver() {
+    isGameOver = true;
+    alert('Game Over! Try again.');
+    resetGame();
+}
+
+function resetGame() {
+    ball.style.top = '0';
+    ball.style.left = '50%';
+    paddle.style.left = '50%';
+    isGameOver = false;
+}
+
+function gameLoop() {
+    if (!isGameOver) {
+        const ballTop = ball.offsetTop;
+        ball.style.top = ballTop + 2 + 'px';
+
+        if (ballTop + ball.clientHeight >= gameContainer.clientHeight) {
+            resetGame();
+        }
+
+        checkCollision();
+    }
+
+    requestAnimationFrame(gameLoop);
+}
+
+gameContainer.addEventListener('mousemove', movePaddle);
+gameLoop();
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decide What to Eat</title>
+    <style>
+      body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+        text-align: center;
+        font-size: larger;
+        
+      }
+      .img-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+      img{
+        width: 100%;
+        height: auto;
+        opacity: 0.7;
+        display: flex;
+        overflow: hidden;
+      }
+      #text-overlay {
+        font-size: larger;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+      }
+
+      #result {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-container">
+      <img src="/Hacktoberfest-2023/Development/CSS Animation Project/bg.png" alt="image">
+      <div id="text-overlay">
+        <h1>Decide What to Eat</h1>
+        <button onclick="decide()">Decide for Me</button>
+        <p id="result"></p>
+        <br>
+        
+        <h2>Your Food Choices:</h2>
+        <input type="text" id="newItem" placeholder="Type a food choice..." />
+        <br>
+        <br>
+        <br>
+        <button onclick="addItem()">Add to List</button>
+        <br>
+        
+        <ul id="foodList">
+          <!-- List items will appear here -->
+        </ul>
+      </div>
+    </div>
+    
+
+    <script>
+      const options = [];
+
+      function decide() {
+        const userAddedOptions = Array.from(
+          document.querySelectorAll("#foodList li")
+        ).map((item) => item.textContent);
+        const allOptions = [...options, ...userAddedOptions];
+
+        if (allOptions.length === 0) {
+          document.getElementById("result").textContent =
+            "Add some food choices first.";
+          return;
+        }
+
+        const randomIndex = Math.floor(Math.random() * allOptions.length);
+        const chosenOption = allOptions[randomIndex];
+        document.getElementById(
+          "result"
+        ).textContent = `How about ${chosenOption} tonight?`;
+      }
+
+      function addItem() {
+        const newItemText = document.getElementById("newItem").value;
+        if (newItemText.trim() !== "") {
+          const listItem = document.createElement("li");
+          listItem.textContent = newItemText;
+          document.getElementById("foodList").appendChild(listItem);
+          document.getElementById("newItem").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    int val;
+    Node *next;
+};
+Node* newnode(int val){
+    Node *head=new Node;
+    head->val=val;
+    head->next=NULL;
+    return head;
+}
+Node findmiddle(Node head){
+    Node *slow=head,*fast=head;
+    while(fast!=NULL&&fast->next!=NULL){
+       fast=fast->next->next;
+       slow=slow->next;
+    }
+    return slow;
+}
+Node *reverse(Node *head){
+    Node *curr=head,*prev=NULL,*future=NULL;
+    while(curr!=NULL){
+        future=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=future;
+    }
+    return prev;
+}
+bool ispalindrome(Node *head1,Node *head2){
+    while(head1!=NULL&&head2!=NULL){
+        if(head1->val!=head2->val) return false;
+        else if(head1->val==head2->val){
+            head1=head1->next;
+            head2=head2->next;
+        }
+    }
+    return true;
+}
+int main() {
+	int n;
+	cin>>n;
+	int data;
+	cin>>data;
+	Node *head=newnode(data);
+	Node *tail=head;
+	for(int i=0;i<n-1;i++){
+	    cin>>data;
+	    tail->next=newnode(data);
+	    tail=tail->next;
+	}
+	Node *head1=head;
+	Node *mid=findmiddle(head);
+	Node *head2=reverse(mid);
+	bool compare=ispalindrome(head1,head2);
+	if(compare==true) cout<<"TRUE"<<endl;
+	else cout<<"FALSE"<<endl;
+	return 0;
+}

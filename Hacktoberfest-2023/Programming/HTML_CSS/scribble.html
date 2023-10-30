@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCRIBBLE GAME</title>
+<style>* {
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    line-height: 15vh;
+    width: 100%;
+    background-color: rgb(25, 103, 25);
+    color: rgb(215, 214, 214);
+  }
+  h1 {
+    text-shadow: 0px 1px 0px #efefef, 0px 2px 0px #efefef,
+      0px 3px 0px #efefef, 0px 4px 0px #efefef,
+      0px 30px 5px rgba(0, 0, 0, 0.341);
+
+    text-align: center;
+  }
+
+  .body {
+    background-color: rgb(74, 157, 74);
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .centre_box {
+    height: 40vh;
+    width: 50vw;
+    background-color: #287323;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .btn {
+    display: block;
+    width: 12vw;
+    margin: 5px 20px;
+    height: 4vh;
+    color: red;
+    border: none;
+    transition: scale(1.25);
+    transition-duration: 0.25s;
+    background-color: rgb(227, 220, 220);
+    border-radius: 5px;
+    font-size: large;
+  }
+
+  .btn:hover {
+    width: 15vw;
+    letter-spacing: 2px;
+    font-size: larger;
+    height: 5vh;
+  }
+  h2,
+  input {
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+}
+span{
+    letter-spacing: 5px;
+}
+  .hidden {
+    display: none;
+  }
+
+  input{
+    border-radius: 20px;
+    width: 30%;
+  }
+
+  .btn2{
+    display : none ;
+  }
+  .for_button{
+    display: flex;
+    flex-direction: row;
+  }
+</style>
+  </head>
+  <body>
+    <header>
+      <h1>Guess the word game !!!</h1>
+    </header>
+    <main>
+      <div class="body">
+        <div class="centre_box">
+          <h2 class="hidden"></h2>
+          <input class="hidden" type="text" />
+          <div class="for_button">
+            <button class="btn">Click to play !!</button>
+            <button class="btn2 btn">End game</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+
+const btn = document.querySelector(".btn");
+const btn2 = document.querySelector(".btn2");
+const input = document.querySelector("input");
+const puzzle = document.querySelector("h2");
+var score = 0;
+
+const words_array = [
+  "kushal","harshit","sachin","divyanshu","shwetank","rakesh","soham","dhruv","piyush","ujjwal","dravish","shubham","geetansh","kalpesh","vishesh","vijay","mehul","nirav","ashish","sunny","aarti","sanjay","varsha","sudhir","jatin","umesh","kamlesh","nilesh","vinay","eklavya","chetan","nitin","dipti","rajiv","alaka","lalit","ritesh","hitesh","mayuri"];
+
+let play = false;
+let random_word = "";
+let scrambled_word = "";
+const scramble = (word) => {
+  for (let i = word.length - 1; i >= 0; i--) {
+    let temp = word[i];
+    let j = Math.floor(Math.random() * i);
+    if (j == i) {
+      j = (j + j + i) % word.length;
+    }
+    word[i] = word[j];
+    word[j] = temp;
+    return word;
+  }
+};
+let index = 0;
+
+btn2.addEventListener("click", function (event) {
+  btn2.style.display = "none";
+  puzzle.innerHTML = `Your score is : ${score}`;
+  btn.innerHTML = "Play Again"
+  score = 0;
+});
+
+btn.addEventListener("click", function (event) {
+  if (play == false) {
+    play = true;
+    btn2.style.display = "none";
+    btn.innerHTML = "Guess";
+    input.classList.toggle("hidden");
+    if (puzzle.style.display != "block") {
+      puzzle.style.display = "block";
+    }
+    input.value = "";
+    index = Math.floor(Math.random() * words_array.length);
+    console.log(index);
+    random_word = words_array[index].split("");
+    scrambled_word = scramble(random_word).join("");
+    setTimeout(() => {
+      puzzle.innerHTML = `Guess the word : ${scrambled_word}`;
+    }, 300);
+  } else {
+    if (input.value == words_array[index]) {
+      score += 1;
+      input.classList.toggle("hidden");
+      puzzle.innerHTML = `You guessed it right ${words_array[index]}`;
+      play = false;
+      btn.innerHTML = "Continue";
+      btn2.style.display = "block";
+    } else {
+      puzzle.innerHTML = `Try again : "${scrambled_word}"`;
+    }
+  }
+});
+</script>
+  </body>
+</html>
