@@ -1,0 +1,385 @@
+
+
+--------------------------------------------------------------------------
+username- heenaba123
+date  - 10-3-23
+This is my first project after learning HTML , this is only designing part
+----------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<!--
+    
+    
+<html>
+<head>
+    <!---<title> neon light button hover effect</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />-->
+
+    <title> hello class 5b</title>  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="favicon.icon" />
+</head>
+<head>
+
+    <title>-</title>
+    <link rel="stylesheet" href="assets/css/menu.css">
+    </head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 12px 13px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: white;
+            }
+
+            .topnav a.active {
+                background-color: ##04AA6D;
+                color: white;
+            }
+</style>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="nav-link-active" href="login1.aspx">LOG IN</a>
+        <a class="nav-link-active" href="register1.aspx">REGISTER</a>
+        <button onclick="document.location='sellerbutton.aspx'">seller</button>
+        <button onclick="document.location='bidderbutton.aspx'">bidder</button>
+        
+       
+        
+       
+    </div>
+
+    
+
+
+
+
+
+
+
+
+    <!-- <div class="content">
+            <ul class="actions">
+                <li><a href="#" class="button primary">seller</a></li>
+                <li><a href="#" class="button primary">buyer</a></li>
+
+            </ul>
+            </div>
+
+            <link rel="stylesheet" href="assets/css/menu.css" />
+            <nav>
+                <p>auction</p>
+                <ul>
+                    <li><a href="indexx.html"><strong>home</strong> </a> </li>
+                    <li>
+                        <a href="#"><strong>login</strong></a>
+                        <ul>
+                            <li><a href=""><strong>sellers</strong></a></li>
+                            <li><a href=""><strong>buyers</strong></a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#"><strong>sign up</strong></a> </li>
+                    <li><a href="#"><strong>expert</strong></a> </li>
+
+
+                </ul>
+            </nav>
+
+
+    </body>-->
+
+
+
+
+
+
+
+
+
+    <body class="is-preload">
+
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Intro -->
+            <section class="intro">
+                <header>
+                    <h2><strong>hi!!</strong> hello tel ke dabbe</h2>
+                    <p><a href="https://twitter.com/ajlkn"></a> <a href="https://html5up.net"></a></p>
+                    <ul class="actions">
+                        <li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+                    </ul>
+                </header>
+                <div class="content">
+                    <span class="image fill" data-position="center"><img src="images/banner.jpg" alt="" /></span>
+                </div>
+            </section>
+
+
+
+            <!-- Section -->
+            <section id="first">
+                <header>
+                    <h2>what exactly we do! </h2>
+                    <h2> buyers/sellers</h2>
+                </header>
+                <div class="content">
+                    <p>
+                        <strong>The main objective of </strong>our project ONLINE AUCTION BID is to develop an online auction system which will provide a forum for sellers to meet and interact with buyers and sell items to interested bidders .Before the auction begins, you must register ahead of time for the auction. This is an easy process and takes just a few moments. Be prepared to have your name, address, phone number, and payment information ahead of time.
+
+                        Generally speaking, there are multiple payment options for an online auction. The majority of auction houses accept a wide range of credit cards as well as other forms of payment. You won’t be charged anything until you win an item. Once the auction approves you as a bidder, you can go ahead and start bidding on your favorite lots.
+                    </p>
+                    
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section>
+                <header>
+                    <h2>how it works!!</h2>
+                    <h1>tubelights </h1>
+                    <li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+
+                </header>
+
+                <div class="content">
+                    <p><strong>here!! </strong> </p>
+                    <ul class="feature-icons">
+                        <li class="icon solid fa-laptop">register</li>
+                        <br> </br>
+                        <p>To start using our auction, you’ll need to register. It’s completely free!</p>
+
+                        <li class="icon solid fa-bolt">buy or bid</li>
+                        <br></br>
+                        <br></br>
+                        <p>You can instantly buy or place a bid on a desired product right after registration.</p>
+
+                        <li class="icon solid fa-signal">submit a bid</li>
+                        <br></br>
+                        
+
+                        <p>Submitting a bid is fast and easy. The process takes approximately 5 minutes.</p>
+
+                        <li class="icon solid fa-cog">win</li>
+                        <br></br>
+                        <br></br>
+
+                        <p>Easily win at our auction and enjoy owning the product you dream of</p>
+                        <!--<li class="icon solid fa-map-marker-alt">Lorem ipsum dolor</li>
+                        <li class="icon solid fa-code">Nibh amet venenatis</li>-->
+
+                    </ul>
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section>
+                <header>
+                    <h2>current auctions available</h2>
+                </header>
+                <div class="content">
+                    <p><strong>here we hve our current running auction </strong> </p>
+
+                    <!-- Section -->
+                    <section>
+                        <header>
+                            <h2><i>living room furniture chesterfield sofa design</h2></i>
+                            <p>countdown finish</p>
+                            <h4>start price  = $1,469.00 </h4>
+                            <h4>end  price  = $1,999.00 </h4>
+                            <h4>color = purple <br /> in stock</h4>
+
+
+
+
+                            <h2>ibanez MD39C-NT acoustic guitar </h2>
+                            <p>countdown finish</p>
+                            <h4>start price  = $135.00 </h4>
+                            <h4>end  price  = $189.00 </h4>
+                            <h4>color = wooden color <br /> in stock</h4>
+
+
+
+
+
+                            <h2>adventure sports MTB cycle with 21 derailleurs </h2>
+                            <p>countdown finish</p>
+                            <h4>start price  = $134.00 </h4>
+                            <h4>end  price  = $179.00 </h4>
+                            <h4>color = neon <br /> in stock</h4>
+
+                            <h2>king size storage bed  </h2>
+
+                            <h4>start price  = $154.00 </h4>
+                            <h4>end  price  = $179.00 </h4>
+                            <h4>color = poweder blue <br /> in stock</h4>
+
+
+
+
+
+                        </header>
+                        <div class="content">
+                            <div class="gallery">
+                                <h4><small> countdown finished</small></h4>
+                                <a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
+
+                                <h4><p>countdown finish</p></h4>
+                                <a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="" /></a>
+                                <h4><p>countdown finish</p></h4>
+                                <a href="images/gallery/fulls/03.jpg"><img src="images/gallery/thumbs/03.jpg" alt="" /></a>
+                                <a href="images/gallery/fulls/04.jpg" class="landscape"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
+
+                                <div class="content">
+                                    <link rel="stylesheet" href="view.aspx.html" />
+                                    <ul class="actions">
+                                        <li><a href="viewall.aspx"  class="button large ">view</a></li>
+                                        <h2><p> click here to view all</p></h2>
+
+                                    </ul>
+                                </div>
+                            </div>
+                    </section>
+
+                    <!-- Section -->
+                    <section>
+                        <header>
+                            <h2>stop doing bulky paper work</h2>
+                            <h3>start using online auction </h3>
+                        </header>
+                        <div class="content">
+                            <div class="gallery">
+                                <a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
+                                <!---<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
+                                <a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>-->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section -->
+                    <section>
+                        <!--<header>
+
+                            </header>
+                            <div class="content">
+                                <div class="gallery">
+                                    <a href="images/gallery/fulls/08.jpg" class="portrait"><img src="images/gallery/thumbs/08.jpg" alt="" /></a>
+                                    <!---<a href="images/gallery/fulls/09.jpg" class="portrait"><img src="images/gallery/thumbs/09.jpg" alt="" /></a>
+                                    <a href="images/gallery/fulls/10.jpg" class="landscape"><img src="images/gallery/thumbs/10.jpg" alt="" /></a>
+                                </div>
+                            </div>
+                        </section>-->
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section>
+                <header>
+                    
+                </header>
+                <div class="content">
+
+
+
+           
+            <section>
+                <header>
+                    <h2>Get in touch</h2>
+                </header>
+                <div class="content">
+                    <p>
+                        <strong>fill up</strong>
+                        <form>
+                            <div class="fields">
+                                <div class="field half">
+                                    <input type="text" name="name" id="name" placeholder="Name" />
+                                </div>
+                                <div class="field half">
+                                    <input type="email" name="email" id="email" placeholder="Email" />
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Message" class="button primary" /></li>
+
+
+                            </ul>
+                            <div class="field half">
+                                <input type="checkbox" id="demo-human" name="demo-human" checked>
+                                <label for="demo-human">Not a robot</label>
+                            </div>
+                        </form>
+                </div>
+                <footer>
+                    <ul class="items">
+                        <li>
+                            <h3>Email</h3>
+                            <a href="#">hrana2028@gmail.com</a>
+                        </li>
+                        <li>
+                            <h3>Phone</h3>
+                            <a href="#">(000) 000-0000</a>
+                        </li>
+                        <li>
+                            <h3>Address</h3>
+
+                        </li>
+                        <li>
+
+                            <h3>Elsewhere</h3>
+                            <ul class="icons">
+                                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                                <li><a href="#" class="icon brands fa-codepen"><span class="label">Codepen</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </footer>
+            </section>
+
+            <!-- Copyright -->
+            <div class="copyright">&copy; : <a href="https://html5up.net"></a>.</div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
