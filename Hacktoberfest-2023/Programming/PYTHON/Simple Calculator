@@ -1,0 +1,24 @@
+//Input two numbers from user
+a=int(input("Enter first number= "))
+b=int(input("Enter second number= "))
+
+print("1: Addition")
+print("2: Substraction")
+print("3: Multiplication")
+print("4: Division")
+
+// choose one at a time from above options
+ch= int(input("Enter your choice= "))
+
+// ch variable should store the value between 1 to 4
+if(ch>=1 and ch<=4):
+  if(ch==1):
+    print(a+b)
+  elif(ch==2):
+    print(a-b)
+  elif(ch==3):
+    print(a*b)
+  else:
+    print(a/b)
+else:
+  print("wrong choice")
