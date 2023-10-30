@@ -1,0 +1,28 @@
+#include <bits/stdc++.h> 
+int knapsack(vector<int> weight, vector<int> value, int n, int maxWeight) 
+{
+	// Write your code here
+	int m=maxWeight;
+	vector<vector<int>>dp(n,vector<int>(m+1,0)); 
+	for(int i=0;i<m+1;i++){
+		for(int j=0;j<n;j++ ){
+			if( j==0){
+                          if (weight[j] > i) {
+                            dp[j][i] = 0;
+                          }
+						  else{
+							  dp[j][i]=value[j];
+						  }
+                        }
+			else{
+				if(i<weight[j]){
+					dp[j][i]=dp[j-1][i];
+				}
+				else{
+					dp[j][i]=max(value[j]+dp[j-1][i-weight[j]],dp[j-1][i]);
+				}
+			}
+		}
+	}
+	return dp[n-1][m];
+}
