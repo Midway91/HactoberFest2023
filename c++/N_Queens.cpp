@@ -1,90 +1,70 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-int n;
-vector<vector<int>> board;
-vector<vector<vector<int>>> v;
-
-/*
-Give input n = no. of queens...
-Output --> All Combinations of positions of n queens so that no queen can attack other..
-*/
-
-bool is_safe(int row, int col){
-
-    int x = row, y = col;
-    //check for same row
-    while(y>=0){
-        if(board[x][y]==1){return false;}
-        y--;
-    }
-
-    int xx = row, yy = col;
-    //check for diagonal
-    while(xx>=0 && yy>=0){
-        if(board[xx][yy]==1){return false;}
-        xx--; yy--;
-    }
-
-    int a = row, b = col;
-    //check for diagonal
-    while(a<n && b>=0){
-        if(board[a][b]==1){return false;}
-        a++; b--;
-    }
-
-    return true;
-
-}
-
-
-
-void solve(int col, int n){
-
-    // base case (if every col is filled)
-    if(col == n){
-        v.push_back(board);
-        return;
-    }
-
-    //put queen in every row of diff col..
-    for(int row = 0; row<n; row++){
-        if(is_safe(row,col)){
-
-            // if placing queen is safe
-            board[row][col] = 1;
-
-            solve(col+1, n);
-
-            //backtrack
-            board[row][col] = 0;
-        }
-    }
-
-
-}
-
-int main()
-{
-    cin>>n;
-
-    for(int i=0; i<n; i++){
-        vector<int> temp(n, 0);
-        board.push_back(temp);
-    }
-
-    solve(0, n);
-    cout<<v.size()<<"\n";
-
-    for(auto b : v){
-        for(auto vv : b){
-            for(int g : vv){
-                cout<<g<<" ";
+ bool isSafe(int &row , int &col, int &n, vector<vector<int>> &check){
+        //checked if any prev row had queen in this col
+        for(int i=0;i<row;i++){
+            if(check[i][col]==1){
+                return false;
             }
-            cout<<"\n";
         }
-        cout<<"\n\n";
+        //checking front diagonal-row decreases-col increases
+        int startrow=row;
+        int startcol=col;
+        while(startrow>=0 && startcol<n){
+            if(check[startrow][startcol]==1){
+                return false;
+            }
+            startrow--;
+            startcol++;
+            
+        }
+        //checking for back diagonal
+        startrow=row;
+        startcol=col;
+        while(startrow>=0 && startcol>=0){
+            if(check[startrow][startcol]==1){
+                return false;
+            }
+            startrow--;
+            startcol--;
+        }
+        
+        return true;
     }
 
 
-}
+   void nqueen(vector<int> temp,vector<vector<int>> &ans,vector<vector<int>> &check,int &n,int row){
+       //base case
+       if(row==n){
+           
+           return;
+       }
+       
+       
+       //placing in each col
+       for(int i=0;i<n;i++){
+           if(isSafe(row,i,n,check)){
+            //   cout<<row<<" "<<i<<" is safe"<<endl;
+               check[row][i]=1;
+            //   cout<<"pushing "<<row<<" "<<i<<endl;
+               temp.push_back(i+1);
+               nqueen(temp,ans,check,n,row+1);
+               //backtrack
+               temp.pop_back();
+                // cout<<"popping "<<row<<" "<<i<<endl;
+               check[row][i]=0;
+           }
+       }
+       
+       return;
+       
+   }
+   
+   
+    vector<vector<int>> nQueen(int n) {
+       
+        vector<vector<int>> ans;
+        vector<vector<int>> check( n , vector<int> (n, 0)); 
+        vector<int> temp;
+        nqueen(temp,ans,check,n,0);
+        return ans;
+        
+    }
