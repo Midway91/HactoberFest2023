@@ -1,65 +1,62 @@
-#include<iostream>
-using namespace std;
-
-bool IsSafe(int **arr,int x,int y,int n){
-  if(x<n && y<n && arr[x][y]==1){
-    return true;
-  }
-  return false;
-}
-
-bool RatInaMaze(int **arr,int x,int y,int n,int **solarr){
-  if(x==n-1 && y==n-1 && IsSafe(arr,x,y,n)){
-    solarr[x][y]=1;
-    return true;
-  }
-
-  if(IsSafe(arr,x,y,n)){
-    solarr[x][y]=1;
-    if(RatInaMaze(arr,x+1,y,n,solarr)){
-      return true;
-    }
-    if(RatInaMaze(arr,x,y+1,n,solarr)){
-      return true;
-    }
-    solarr[x][y]=0; //Backtracking and changing value back
-    return false;
-  }
-  return false;
-
-}
-int main()
+ bool isSafe(vector<vector<int>> &m,int x,int y,int &n)
 {
-  int n;
-  cin>>n;
-  int **arr = new int *[n];
-  for(int i=0;i<n;i++){
-     arr[i] = new int[n];
-  }
-
-  for(int i=0;i<n;i++){
-    for(int j=0;j<n;j++){
-      cin>>arr[i][j];
+    if(x>=0 && y>=0 && x<n && y<n && m[x][y]==1){
+        return true;
     }
-  }
-
-  int **Solarr = new int *[n];
-  for(int i=0;i<n;i++){
-    Solarr[i] = new int[n];
-  }
-
-  for(int i=0;i<n;i++){
-    for(int j=0;j<n;j++){
-      Solarr[i][j]=0;
-    }
-  }
-
-  if(RatInaMaze(arr,0,0,n,Solarr)){
-    for(int i=0;i<n;i++){
-      for(int j=0;j<n;j++){
-        cout<<Solarr[i][j]<<" ";
-      }
-      cout<<endl;
-    }
-  }
+    
+    return false;
+    
 }
+bool ratinamaze(vector<string> &ans,int x,int y,int &n,vector<vector<int>> &m){
+    
+    if(x==n-1 && y==n-1){
+        return true;
+    }
+    
+    if(isSafe(m,x,y+1,n)){
+        ans.push_back("R");
+        cout<<"pushed R at "<<x<<" "<<y<<endl;
+        for(auto i:ans){
+            cout<<i<<" ";
+        }
+         cout<<endl;
+        if(ratinamaze(ans,x,y+1,n,m)){
+            return true;
+        }
+       
+        ans.pop_back();
+        cout<<"popped R at "<<x<<" "<<y<<endl;
+    }
+
+    if(isSafe(m,x+1,y,n)){
+        ans.push_back("D");
+        cout<<"pushed D at "<<x<<" "<<y<<endl;
+        if(ratinamaze(ans,x+1,y,n,m)){
+            return true;
+        }
+        ans.pop_back();
+        cout<<"popped D at "<<x<<" "<<y<<endl;
+    }
+
+    
+    return false;
+    
+    
+}
+    vector<string> findPath(vector<vector<int>> &m, int n) {
+       
+      
+        vector<string> ans;
+        if(ratinamaze(ans,0,0,n,m)){
+            cout<<"ye tha ans"<<endl;
+             for(auto i:ans){
+            cout<<i<<" ";
+        }
+        cout<<endl;
+            return ans;
+        }
+     
+        vector<string> ans2;
+        ans2.push_back("-1");
+        return ans2;
+    }
