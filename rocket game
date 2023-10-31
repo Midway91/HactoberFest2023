@@ -1,0 +1,51 @@
+import pygame
+import sys
+
+# Initialize Pygame
+pygame.init()
+
+# Constants
+WIDTH, HEIGHT = 800, 600
+ROCKET_WIDTH, ROCKET_HEIGHT = 50, 50
+ROCKET_SPEED = 5
+
+# Colors
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
+
+# Create the game window
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Rocket Game")
+
+# Load the rocket image
+rocket_image = pygame.image.load("rocket.png")
+
+# Get the initial position of the rocket
+rocket_x = (WIDTH - ROCKET_WIDTH) // 2
+rocket_y = HEIGHT - ROCKET_HEIGHT
+
+# Main game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and rocket_x > 0:
+        rocket_x -= ROCKET_SPEED
+    if keys[pygame.K_RIGHT] and rocket_x < WIDTH - ROCKET_WIDTH:
+        rocket_x += ROCKET_SPEED
+
+    # Clear the screen
+    screen.fill(WHITE)
+
+    # Draw the rocket
+    screen.blit(rocket_image, (rocket_x, rocket_y))
+
+    # Update the display
+    pygame.display.update()
+
+# Quit the game
+pygame.quit()
+sys.exit()
