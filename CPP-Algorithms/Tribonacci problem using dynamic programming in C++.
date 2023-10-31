@@ -1,0 +1,65 @@
+//Bottom-Up (Iterative) Approach:
+
+#include <iostream>
+#include <unordered_map>
+
+std::unordered_map<int, int> memo;
+
+int tribonacci(int n) {
+    if (memo.find(n) != memo.end()) {
+        return memo[n];
+    }
+    if (n == 0) {
+        memo[n] = 0;
+    } else if (n == 1 || n == 2) {
+        memo[n] = 1;
+    } else {
+        memo[n] = tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+    }
+    return memo[n];
+}
+
+int main() {
+    int n;
+    std::cout << "Enter the value of n: ";
+    std::cin >> n;
+
+    int result = tribonacci(n);
+    std::cout << "The Tribonacci number at position " << n << " is: " << result << std::endl;
+
+    return 0;
+}
+
+
+
+//Top-Down (Recursive with Memoization) Approach:
+#include <iostream>
+#include <unordered_map>
+
+std::unordered_map<int, int> memo;
+
+int tribonacci(int n) {
+    if (memo.find(n) != memo.end()) {
+        return memo[n];
+    }
+    if (n == 0) {
+        memo[n] = 0;
+    } else if (n == 1 || n == 2) {
+        memo[n] = 1;
+    } else {
+        memo[n] = tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+    }
+    return memo[n];
+}
+
+int main() {
+    int n;
+    std::cout << "Enter the value of n: ";
+    std::cin >> n;
+
+    int result = tribonacci(n);
+    std::cout << "The Tribonacci number at position " << n << " is: " << result << std::endl;
+
+    return 0;
+}
+
