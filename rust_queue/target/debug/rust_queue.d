@@ -1,0 +1,1 @@
+/run/media/cheb/Software/Coding/Projects/Hacktoberfest/HactoberFest2023/rust_queue/target/debug/rust_queue: /run/media/cheb/Software/Coding/Projects/Hacktoberfest/HactoberFest2023/rust_queue/src/main.rs
