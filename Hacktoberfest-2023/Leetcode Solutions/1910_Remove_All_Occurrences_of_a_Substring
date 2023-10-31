@@ -1,0 +1,12 @@
+class Solution {
+public:
+    string removeOccurrences(string s, string part) {
+        
+
+        while(s.find(part) != string::npos){
+            // if this cond. true than substring is present inside string
+            s.erase(s.find(part),part.length());
+        }
+        return s;
+    }
+};
