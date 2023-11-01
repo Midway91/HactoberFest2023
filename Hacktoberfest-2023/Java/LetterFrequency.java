@@ -13,6 +13,7 @@ public class LetterFrequency {
         for (Map.Entry<Character, Integer> entry : letterFrequency.entrySet()) {
             char letter = entry.getKey();
             int frequency = entry.getValue();
+            
             System.out.println(letter + ": " + frequency);
         }
     }
