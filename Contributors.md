@@ -1,2 +1,0 @@
-
-Pavan Patchikarla
