@@ -2,8 +2,8 @@
 
 using namespace std;
 
-    //Create classes Rectangle and RectangleArea
- 
+ //Create classes Rectangle and RectangleArea
+
 class Rectangle{
     public:
     int width;
@@ -32,19 +32,19 @@ int main()
     RectangleArea r_area;
     
     
-      //Read the width and height
+     //Read the width and height
      
     r_area.read_input();
     
     
-      //Print the width and height
+     //Print the width and height
      
     r_area.Rectangle::display();
     
     
     
-      //Print the area
-     
+     //Print the area
+    
     r_area.display();
     
     return 0;
